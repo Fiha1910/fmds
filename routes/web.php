@@ -31,7 +31,10 @@ Route::get('/category/create',[CategoryController::class,'store'])->name('catego
 Route::get('/category/create/form',[CategoryController::class,'create'])->name('category.create');
 Route::post('/category/create/form/submit',[CategoryController::class,'form'])->name('category.form');
 Route::get('/products',[ProductsController::class,'list']);
-Route::get('/stocks',[StockController::class,'list']);
+Route::get('/stocks',[StockController::class,'list'])->name('stocks.list');
+Route::get('/stocks/create/form',[StockController::class,'form']);
+Route::post('/stocks/create/form/submit',[StockController::class,'form_post'])->name('stocks.form');
+
 Route::get('/demands',[DemandController::class,'list']);
 Route::get('/distributions',[DistributionController::class,'list']);
 Route::get('/reports',[ReportController::class,'list']);
