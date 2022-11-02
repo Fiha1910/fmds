@@ -27,7 +27,9 @@ Route::get('/showhome',[HomeController::class,'showhome']);
 Route::get('/branches',[BranchController::class,'list']);
 Route::get('branches/create',[BranchController::class,'create']);
 Route::get('/category',[CategoryController::class,'categories']);
-
+Route::get('/category/create',[CategoryController::class,'store'])->name('category.store');
+Route::get('/category/create/form',[CategoryController::class,'create'])->name('category.create');
+Route::post('/category/create/form/submit',[CategoryController::class,'form'])->name('category.form');
 Route::get('/products',[ProductsController::class,'list']);
 Route::get('/stocks',[StockController::class,'list']);
 Route::get('/demands',[DemandController::class,'list']);

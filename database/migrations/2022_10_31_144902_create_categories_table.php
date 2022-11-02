@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
              $table->string('name',5);
              $table->string('product_type');
-             $table->text('product_image')->default('active');
+             $table->text('product_image')->nullable();
             $table->timestamps();
         });
     }
