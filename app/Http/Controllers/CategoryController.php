@@ -8,8 +8,12 @@ use Illuminate\Http\Request;
 class CategoryController extends Controller
 {
     public function categories(){
-        return view('Backend.Page.category');
+        $category = Category::all();
+        
+        return view('Backend.Page.category',compact('category'));
     }
+
+
     public function create(){
         return view('backend.page.create');
     }

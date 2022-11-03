@@ -24,8 +24,10 @@ use App\Http\Controllers\ReportController;
 
 Route::get('/',[HomeController::class, 'admin']);
 Route::get('/showhome',[HomeController::class,'showhome']);
-Route::get('/branches',[BranchController::class,'list']);
+Route::get('/branches',[BranchController::class,'list'])->name('branches.list');
 Route::get('branches/create',[BranchController::class,'create']);
+Route::post('/branches/form/create',[BranchController::class,'details'])->name('branches.form');
+
 Route::get('/category',[CategoryController::class,'categories']);
 Route::get('/category/create',[CategoryController::class,'store'])->name('category.store');
 Route::get('/category/create/form',[CategoryController::class,'create'])->name('category.create');

@@ -8,30 +8,31 @@
 <table class="table">
   <thead>
     <tr>
-      <th scope="col">#</th>
+      <th scope="col">ID</th>
       <th scope="col">Category Name</th>
       <th scope="col">Description</th>
       <th scope="col">Image</th>
+      <th scope="col">Action</th>
     </tr>
   </thead>
   <tbody>
+    @foreach($category as $data)
+
+
     <tr>
       <th scope="row">1</th>
-      <td></td>
-      <td></td>
-      <td></td>
+      
+      <td>{{$data->name}}</td>
+      <td>{{$data->product_type}}</td>
+      <td><img src="{{$data->product_image}}"></td>
+      <td>
+        <a href="" class="btn btn-outline-primary">Update</a>
+        <a href="" class="btn btn-outline-danger">Delete</a>
+        <a href="" class="btn btn-outline-success">View</a>
+
+      </td>
     </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td colspan="2"></td>
-      <td></td>
-    </tr>
+    @endforeach
   </tbody>
 </table>
 </div>
