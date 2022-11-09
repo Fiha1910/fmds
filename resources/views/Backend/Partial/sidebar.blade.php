@@ -9,7 +9,7 @@
 
             <a class="nav-link" href="{{url('/branches')}}">
                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                Branche
+                Branch
             </a>
 
             <a class="nav-link" href="{{url('/category')}}">

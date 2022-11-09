@@ -8,19 +8,20 @@ use Illuminate\Http\Request;
 class CategoryController extends Controller
 {
     public function categories(){
-        $category = Category::all();
+        // $category = Category::all();
+        $category = Category::paginate(2);
         
-        return view('Backend.Page.category',compact('category'));
+        return view('Backend.Page.category.category',compact('category'));
     }
 
 
     public function create(){
-        return view('backend.page.create');
+        return view('backend.page.category.create');
     }
     public function form(Request $request)
     {
            // dd($request->all());
-           Category ::create([
+           Category::create([
                 'name'=>$request->name,
                 'product_type'=>$request->product_type,
                 'product_image'=>$request->product_image

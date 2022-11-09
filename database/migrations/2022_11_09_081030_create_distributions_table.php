@@ -13,12 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('demand_details', function (Blueprint $table) {
+        Schema::create('distributions', function (Blueprint $table) {
             $table->id();
-            $table->string('quantity');
-            $table->string('branches_id');
-            $table->string('demand_date');
-            $table->string('distribution status');
+            $table->string('name');
+            $table->string('date');
+            $table->text('address');
+            $table->string('contact');
             $table->timestamps();
         });
     }
@@ -30,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('demand_details');
+        Schema::dropIfExists('distributions');
     }
 };

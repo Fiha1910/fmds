@@ -2,6 +2,9 @@
 
 @section("content")
 <div>
+   <h1>Category List</h1>
+
+   
  <a href="{{route('category.create')}}" class="btn btn-primary">Create</a>
 
 
@@ -35,6 +38,7 @@
     @endforeach
   </tbody>
 </table>
+{{$category->links()}}
 </div>
 
 @endsection

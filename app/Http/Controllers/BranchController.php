@@ -8,16 +8,16 @@ class BranchController extends Controller
 {
     public function list(){
         $branch = Branch::all();
-        return view('backend.page.branches',compact('branch'));
+        return view('backend.page.branch.branches',compact('branch'));
     }
             
     public function create(){
-        return view("backend.page.branchesCreate");
+        return view("backend.page.branch.branchesCreate");
     }
     public function details (Request $request){
         //   dd ($request->all());
         
-        Branche::create([
+        Branch::create([
             'name'=> $request->name,
             'contact'=>$request->contact
             
