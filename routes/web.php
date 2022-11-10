@@ -47,3 +47,5 @@ Route::get('/distributions/create/form',[DistributionController::class,'form_pos
 Route::post('/distributions/store',[DistributionController::class,'store'])->name('distribution.store');
 
 Route::get('/reports',[ReportController::class,'list']);
+Route::get('/report/create/form',[ReportController::class,'list'])->name('report.list');
+Route::post('/report/form/store',[ReportController::class,'store'])->name('report.store');

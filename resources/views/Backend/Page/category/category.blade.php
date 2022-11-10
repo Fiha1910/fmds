@@ -27,7 +27,10 @@
       
       <td>{{$data->name}}</td>
       <td>{{$data->product_type}}</td>
-      <td><img src="{{$data->product_image}}"></td>
+      <td>
+        
+        <img width="100px" styel="border-radius: 10px" src="{{url('/uploads/'.$data->product_image)}}" alt="product_image">
+      </td>
       <td>
         <a href="" class="btn btn-outline-primary">Update</a>
         <a href="" class="btn btn-outline-danger">Delete</a>

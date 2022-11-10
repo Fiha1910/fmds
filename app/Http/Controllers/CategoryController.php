@@ -20,12 +20,22 @@ class CategoryController extends Controller
     }
     public function form(Request $request)
     {
-           // dd($request->all());
-           Category::create([
+            // dd($request->all());
+            $fileName=null;
+            
+            if($request->hasFile('product_image'))
+            {
+                $fileName =date('ymdhmi').'.'.$request->file('product_image')->getClientOriginalExtension();
+                $request->file('product_image')->storeAs('/uploads',$fileName);
+            }
+            Category::create([
                 'name'=>$request->name,
                 'product_type'=>$request->product_type,
-                'product_image'=>$request->product_image
-           ]);
-           return redirect()->back();
-    }
+                'product_image'=>$fileName
+
+            ]);
+            return redirect()->back();
+}
+
+        
 }

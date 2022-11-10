@@ -7,7 +7,10 @@ use Illuminate\Http\Request;
 class DistributionController extends Controller
 {
     public function list(){
-        $distribution= Distribution::all();
+
+        $distribution= Distribution::paginate(2);
+
+        // $distribution= Distribution::all();
 
         return view('backend.page.distribution.distributions',compact('distribution'));
     }

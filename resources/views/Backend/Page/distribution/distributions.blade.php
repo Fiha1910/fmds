@@ -28,6 +28,7 @@
     @endforeach
   </tbody>
 </table>
+{{$distribution->links()}}
 </div>
 
 
