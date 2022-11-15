@@ -9,6 +9,7 @@ use App\Http\Controllers\StockController;
 use App\Http\Controllers\DemandController;
 use App\Http\Controllers\DistributionController;
 use App\Http\Controllers\ReportController;
+use App\Http\Controllers\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,9 +22,18 @@ use App\Http\Controllers\ReportController;
 |
 */
 
+Route::get('/login',[AuthController::class,'login'])->name('login');
+Route::post("/login-do",[AuthController::class,'doLogin'])->name("do.login");
 
-Route::get('/',[HomeController::class, 'admin']);
+Route::get('/logout',[AuthController::class,'logout'])->name('do.logout');
+
+Route::group(['middleware'=>'auth'],function(){
+
+
+Route::get('/',[HomeController::class, 'admin'])->name("admin");
 Route::get('/showhome',[HomeController::class,'showhome']);
+
+
 
 Route::get('/branches',[BranchController::class,'list'])->name('branches.list');
 Route::get('branches/create',[BranchController::class,'create']);
@@ -49,3 +59,7 @@ Route::post('/distributions/store',[DistributionController::class,'store'])->nam
 Route::get('/reports',[ReportController::class,'list']);
 Route::get('/report/create/form',[ReportController::class,'list'])->name('report.list');
 Route::post('/report/form/store',[ReportController::class,'store'])->name('report.store');
+
+
+
+});
