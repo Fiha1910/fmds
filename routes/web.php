@@ -10,6 +10,7 @@ use App\Http\Controllers\DemandController;
 use App\Http\Controllers\DistributionController;
 use App\Http\Controllers\ReportController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\WebController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,12 +23,21 @@ use App\Http\Controllers\AuthController;
 |
 */
 
+// for user
+Route::get('/',[WebController::class,'webhome'])->name('home.page');
+
+
+
+
+
+// for admin
+
 Route::get('/login',[AuthController::class,'login'])->name('login');
 Route::post("/login-do",[AuthController::class,'doLogin'])->name("do.login");
 
 Route::get('/logout',[AuthController::class,'logout'])->name('do.logout');
 
-Route::group(['middleware'=>'auth'],function(){
+Route::group(['middleware'=>'auth','prefix'=>'admin'],function(){
 
 
 Route::get('/',[HomeController::class, 'admin'])->name("admin");
@@ -39,24 +49,25 @@ Route::get('/branches',[BranchController::class,'list'])->name('branches.list');
 Route::get('branches/create',[BranchController::class,'create']);
 Route::post('/branches/form/create',[BranchController::class,'details'])->name('branches.form');
 
-Route::get('/category',[CategoryController::class,'categories']);
+Route::get('/category',[CategoryController::class,'categories'])->name('categories.list');
 Route::get('/category/create/form',[CategoryController::class,'create'])->name('category.create');
 Route::post('/category/create/form/submit',[CategoryController::class,'form'])->name('category.form');
 
 Route::get('/products',[ProductsController::class,'list']);
+
 Route::get('/stocks',[StockController::class,'list'])->name('stocks.list');
 Route::get('/stocks/create/form',[StockController::class,'form']);
 Route::post('/stocks/create/form/submit',[StockController::class,'form_post'])->name('stocks.form');
 
-Route::get('/demands',[DemandController::class,'list']);
+Route::get('/demands',[DemandController::class,'list'])->name('demand.list');
 Route::get('/demands/create',[DemandController::class,'create'])->name('demand.create');
 // Route::get('/demands/form',[DemandController::class,'form_details'])->name('demand.form');
 
-Route::get('/distributions',[DistributionController::class,'list']);
+Route::get('/distributions',[DistributionController::class,'list'])->name('distributions.list');
 Route::get('/distributions/create/form',[DistributionController::class,'form_post'])->name('distributions.form');
 Route::post('/distributions/store',[DistributionController::class,'store'])->name('distribution.store');
 
-Route::get('/reports',[ReportController::class,'list']);
+Route::get('/reports',[ReportController::class,'list'])->name('reports.list');
 Route::get('/report/create/form',[ReportController::class,'list'])->name('report.list');
 Route::post('/report/form/store',[ReportController::class,'store'])->name('report.store');
 
