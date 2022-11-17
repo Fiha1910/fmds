@@ -12,28 +12,29 @@
   <thead>
     <tr>
       <th scope="col">ID</th>
-      <th scope="col">Category Name</th>
-      <th scope="col">Description</th>
+      <th scope="col">Product Name</th>
+      <th scope="col">Product Type</th>
       <th scope="col">Image</th>
       <th scope="col">Action</th>
     </tr>
   </thead>
   <tbody>
-    @foreach($category as $data)
+    @foreach($category as $key => $data)
 
 
     <tr>
-      <th scope="row">1</th>
+      <th scope="row">{{$key + $category->firstItem()}}</th>
       
       <td>{{$data->name}}</td>
       <td>{{$data->product_type}}</td>
+      <
       <td>
         
         <img width="100px" styel="border-radius: 10px" src="{{url('/uploads/'.$data->product_image)}}" alt="product_image">
       </td>
       <td>
         <a href="" class="btn btn-outline-primary">Update</a>
-        <a href="" class="btn btn-outline-danger">Delete</a>
+        <a href="{{route('admin.product.delete',$data->id)}}" class="btn btn-outline-danger">Delete</a>
         <a href="" class="btn btn-outline-success">View</a>
 
       </td>

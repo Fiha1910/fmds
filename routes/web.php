@@ -46,12 +46,13 @@ Route::get('/showhome',[HomeController::class,'showhome']);
 
 
 Route::get('/branches',[BranchController::class,'list'])->name('branches.list');
-Route::get('branches/create',[BranchController::class,'create']);
+Route::get('branches/create',[BranchController::class,'create'])->name('branch.create');
 Route::post('/branches/form/create',[BranchController::class,'details'])->name('branches.form');
 
 Route::get('/category',[CategoryController::class,'categories'])->name('categories.list');
 Route::get('/category/create/form',[CategoryController::class,'create'])->name('category.create');
 Route::post('/category/create/form/submit',[CategoryController::class,'form'])->name('category.form');
+Route::get('/product/delete/{product_id}',[CategoryController::class,'deleteproduct'])->name('admin.product.delete');
 
 Route::get('/products',[ProductsController::class,'list']);
 

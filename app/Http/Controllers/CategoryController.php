@@ -36,6 +36,10 @@ class CategoryController extends Controller
             ]);
             return redirect()->back();
 }
+    public function deleteproduct($product_id){
+        $product=Category::find($product_id)->delete();
+        return redirect ()->back()->with('meassage','Product deleted successfully');
+    }
 
         
 }
