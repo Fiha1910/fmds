@@ -12,7 +12,7 @@
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="name">Name:</label>
-      <input required type="text" class="form-control" id="name" placeholder="Enter Name" name="name">
+      <input required type="text" class="form-control" id="name" placeholder="Enter Product Name" name="name">
     </div>
     <div class="form-group col-md-6">
       <label for="product_type">Product type:</label>

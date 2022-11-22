@@ -18,15 +18,15 @@
     </tr>
   </thead>
   <tbody>
-    @foreach($branch as $data)
+    @foreach($branch as $key => $data)
     <tr>
-      <th scope="row">1</th>
+      <th scope="row">{{$key + 1}}</th>
       <td>{{$data->name}}</td>
       <td>{{$data->contact}}</td>
       <td></td>
       <td>
         <a href="" class="btn btn-outline-primary">Update</a>
-        <a href="" class="btn btn-outline-danger">Delete</a>
+        <a href="{{route('admin.branch.delete',$data->id)}}" class="btn btn-outline-danger">Delete</a>
       </td>
     </tr>
     @endforeach

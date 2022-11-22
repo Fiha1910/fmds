@@ -8,12 +8,12 @@ use App\Models\Stock;
 class StockController extends Controller
 {
     public function list() {
-        return view('backend.page.stocks');
+        return view('backend.page.stocks.stocks');
     }
 
     public function form() {
 
-            return view('backend.page.stocks_form');
+            return view('backend.page.stocks.stocks_form');
     }
     
     public function form_post(Request $request) {

@@ -33,7 +33,7 @@
         <img width="100px" styel="border-radius: 10px" src="{{url('/uploads/'.$data->product_image)}}" alt="product_image">
       </td>
       <td>
-        <a href="" class="btn btn-outline-primary">Update</a>
+        <a href="{{route('category.edit',$data->id)}}" class="btn btn-outline-primary">Edit</a>
         <a href="{{route('admin.product.delete',$data->id)}}" class="btn btn-outline-danger">Delete</a>
         <a href="" class="btn btn-outline-success">View</a>
 

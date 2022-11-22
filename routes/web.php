@@ -48,16 +48,21 @@ Route::get('/showhome',[HomeController::class,'showhome']);
 Route::get('/branches',[BranchController::class,'list'])->name('branches.list');
 Route::get('branches/create',[BranchController::class,'create'])->name('branch.create');
 Route::post('/branches/form/create',[BranchController::class,'details'])->name('branches.form');
-
+Route::get('/branches/delete/{branches_id}',[BranchController::class,'deletebranch'])->name('admin.branch.delete');
+// Category:
 Route::get('/category',[CategoryController::class,'categories'])->name('categories.list');
 Route::get('/category/create/form',[CategoryController::class,'create'])->name('category.create');
 Route::post('/category/create/form/submit',[CategoryController::class,'form'])->name('category.form');
+//for delete option
 Route::get('/product/delete/{product_id}',[CategoryController::class,'deleteproduct'])->name('admin.product.delete');
+// for edit:
+Route::get('category/edit/{category_id}',[CategoryController::class,'editcategory'])->name('category.edit');    
+Route::put('category/edit/{category_id}',[CategoryController::class,'update'])->name('category.update');
 
 Route::get('/products',[ProductsController::class,'list']);
 
 Route::get('/stocks',[StockController::class,'list'])->name('stocks.list');
-Route::get('/stocks/create/form',[StockController::class,'form']);
+Route::get('/stocks/create/form',[StockController::class,'form'])->name('stocks_table');
 Route::post('/stocks/create/form/submit',[StockController::class,'form_post'])->name('stocks.form');
 
 Route::get('/demands',[DemandController::class,'list'])->name('demand.list');

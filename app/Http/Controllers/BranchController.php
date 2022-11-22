@@ -27,4 +27,9 @@ class BranchController extends Controller
         return redirect()->back();
         // return redirect()->route('branches.list');
     }
+    public function deletebranch($branch_id)
+    {
+        $branch=Branch::find($branch_id)->delete();
+        return redirect()->back()->with('message','Branches deleted sucessfully');
+    }
 }

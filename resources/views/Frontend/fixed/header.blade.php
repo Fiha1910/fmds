@@ -27,9 +27,9 @@
 				        <ul class="nav-menu">
 				          <li class="menu-active"><a href="#home">Home</a></li>
 				          <li><a href="#about">About</a></li>
-				          <li><a href="#coffee">Coffee</a></li>
-				          <li><a href="#review">Review</a></li>
-				          <li><a href="#blog">Blog</a></li>
+				          <li><a href="#coffee">Pages</a></li>
+				          <li><a href="#review">Elements</a></li>
+				          <li><a href="#blog">Contact</a></li>
 				          <li class="menu-has-children"><a href="">Pages</a>
 				            <ul>
 				              <li><a href="generic.html">Generic</a></li>

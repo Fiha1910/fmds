@@ -6,7 +6,7 @@
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="">Name</label>
-      <input type="text" class="form-control" id="name_form" placeholder="Enter Name" name="name">
+      <input type="text" class="form-control" id="name_form" placeholder="Enter Branch Name" name="name">
     </div>
     <select name="status" id="">
       <option value="active">active</option>

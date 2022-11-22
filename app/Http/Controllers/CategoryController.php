@@ -40,6 +40,37 @@ class CategoryController extends Controller
         $product=Category::find($product_id)->delete();
         return redirect ()->back()->with('meassage','Product deleted successfully');
     }
+    public function editcategory($category_id)
+    {
+        $category=Category::find($category_id);
+        return view('backend.page.category.edit',compact('category'));
+    }
+        public function update(Request $request, $category_id)
+        {
+        $category=Category::find($category_id);
+        $fileName=$category->product_image;
+        if($request->hasFile('product_image'))
+        {
+            $fileName =date('ymdhmi').'.'.$request->file('product_image')->getClientOriginalExtension();
+            $request->file('product_image')->storeAs('/uploads',$fileName);
+        }
+        
+    
+        $category->update([
+            'name'=>$request->name,
+            'product_type'=>$request->product_type,
+            'product_image'=>$fileName
+
+        ]);
+        return redirect()->back();
+
+    }
+        
+    
+
+    }
+
+    
 
         
-}
+
