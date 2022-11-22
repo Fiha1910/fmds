@@ -10,20 +10,20 @@
     </div> -->
     <div class="form-group col-md-6">
       <label for="products_id">Product_Id</label>
-      <input type="number" class="form-control" id="products_id" name="products_id" placeholder="Enter Id">
+      <input type="number" class="form-control"  name="products_id" placeholder="Enter Id">
     </div>
   </div>
   <div class="form-group">
     <label for="products_quantity">Product_Quantity</label>
-    <input type="number" class="form-control" id="products_quantity" name="Product_Quantity" placeholder="Enter Product Quantity">
+    <input type="number" class="form-control"  name="product_quantity" placeholder="Enter Product Quantity">
   </div>
   <div class="form-group">
     <label for="image">Image</label>
-    <input type="file" class="form-control" id="image" name="image" placeholder="Enter Image">
+    <input type="file" class="form-control"  name="image" placeholder="Enter Image">
   </div>
   <div class="form-group">
-    <label for="products_price">Price</label>
-    <input type="number" class="form-control" id="products_price" name="products_price" placeholder="Enter Products_Price">
+    <label for="price">Price</label>
+    <input type="number" class="form-control" name="price" placeholder="Enter Products_Price">
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>

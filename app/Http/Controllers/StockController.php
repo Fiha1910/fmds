@@ -8,7 +8,9 @@ use App\Models\Stock;
 class StockController extends Controller
 {
     public function list() {
-        return view('backend.page.stocks.stocks');
+      $stock=Stock::all();
+
+        return view('backend.page.stocks.stocks',compact('stock'));
     }
 
     public function form() {
