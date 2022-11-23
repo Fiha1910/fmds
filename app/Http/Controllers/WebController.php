@@ -9,4 +9,7 @@ class WebController extends Controller
     public function webhome(){
         return view('Frontend.pages.home');
     }
+    public function login(){
+        
+    }
 }

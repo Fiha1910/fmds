@@ -23,9 +23,9 @@ use App\Http\Controllers\WebController;
 |
 */
 
-// for user
+// for website
 Route::get('/',[WebController::class,'webhome'])->name('home.page');
-
+Route::post('/',[WebController::class,'login'])->name('home.login');
 
 
 
@@ -44,11 +44,15 @@ Route::get('/',[HomeController::class, 'admin'])->name("admin");
 Route::get('/showhome',[HomeController::class,'showhome']);
 
 
-
+// Branch:
 Route::get('/branches',[BranchController::class,'list'])->name('branches.list');
 Route::get('branches/create',[BranchController::class,'create'])->name('branch.create');
 Route::post('/branches/form/create',[BranchController::class,'details'])->name('branches.form');
 Route::get('/branches/delete/{branches_id}',[BranchController::class,'deletebranch'])->name('admin.branch.delete');
+// for edit,update
+Route::get('/branch/edit/{branch_id}',[BranchController::class,'editbranch'])->name('branch.edit');
+Route::put('/branch/edit/{branch_id}',[BranchController::class,'update'])->name('branch.update');
+
 // Category:
 Route::get('/category',[CategoryController::class,'categories'])->name('categories.list');
 Route::get('/category/create/form',[CategoryController::class,'create'])->name('category.create');

@@ -32,4 +32,21 @@ class BranchController extends Controller
         $branch=Branch::find($branch_id)->delete();
         return redirect()->back()->with('message','Branches deleted sucessfully');
     }
+    public function editbranch($branch_id)
+    {
+        $branch=Branch::find($branch_id);
+        return view('Backend.Page.branch.edit',compact('branch'));
+    }
+    public function update(Request $request,$branch_id)
+    {
+        $branch=Branch::find($branch_id);
+        $branch->update([
+            
+            'name'=> $request->name,
+            'contact'=>$request->contact,
+            'status'=>$request->status
+
+        ]);
+        return redirect()->back();
+    }
 }

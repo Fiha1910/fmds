@@ -25,7 +25,7 @@
       <td>{{$data->contact}}</td>
       <td></td>
       <td>
-        <a href="" class="btn btn-outline-primary">Update</a>
+        <a href="{{route('branch.edit',$data->id)}}" class="btn btn-outline-primary">Edit</a>
         <a href="{{route('admin.branch.delete',$data->id)}}" class="btn btn-outline-danger">Delete</a>
       </td>
     </tr>
