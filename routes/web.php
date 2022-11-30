@@ -26,8 +26,8 @@ use App\Http\Controllers\WebController;
 // for website
 Route::get('/',[WebController::class,'webhome'])->name('home.page');
 Route::post('/register',[WebController::class,'registration'])->name('registration');
-Route::post('/login',[WebController::class,'login'])->name('user.login');
-
+Route::post('/user/login',[WebController::class,'login'])->name('user.login');
+Route::get('/user/logout', [WebController::class, 'logout'])->name('user.logout');
 
 
 

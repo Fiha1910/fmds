@@ -30,9 +30,18 @@
 				          <li><a href="#coffee">Pages</a></li>
 				          <li><a href="#review">Elements</a></li>
 				          <li><a href="#blog">Contact</a></li>
+
+						  @auth
+						  <a class="nav-item nav-link">
+{{--                                   <img src="" alt="image">--}}
+                                   {{auth()->user()->name}}</a>
+                                <a href="{{route('user.logout')}}" class="nav-item nav-link">Logout</a>
+                            @else
+
 						  <li><a href="" data-toggle="modal" data-target="#registration">Registration</a></li>
 
 						  <li><a href="" data-toggle="modal" data-target="#login">login</a></li>
+						  @endauth
 				          <li class="menu-has-children"><a href="">Pages</a>
 				            <ul>
 				              <li><a href="generic.html">Generic</a></li>

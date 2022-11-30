@@ -43,6 +43,11 @@ class WebController extends Controller
         notify()->error('invalid password');
         return redirect()->back();
     }
-
+    public function logout()
+    {
+        auth()->logout();
+        notify()->success('logout success');
+        return redirect()->back();
+    }
 
 }
