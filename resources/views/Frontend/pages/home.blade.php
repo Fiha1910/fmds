@@ -20,7 +20,7 @@
 				</div>
 			</section>
 			<!-- End banner Area -->	
-
+			
 			<!-- Start video-sec Area -->
 			<section class="video-sec-area pb-100 pt-40" id="about">
 				<div class="container">

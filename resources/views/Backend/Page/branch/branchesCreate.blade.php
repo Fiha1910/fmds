@@ -8,10 +8,14 @@
       <label for="">Name</label>
       <input type="text" class="form-control" id="name_form" placeholder="Enter Branch Name" name="name">
     </div>
-    <select name="status" id="">
-      <option value="active">active</option>
-      <option value="inactive">inactive</option>
+
+    <div class="from-group">
+      <label for="">Select Status</label>
+    <select name="status" id="" class="from-control">
+      <option value="active">Active</option>
+      <option value="inactive">Inactive</option>
     </select>
+  </div>
 
     <div class="form-group col-md-6">
       <label for="">Contact</label>

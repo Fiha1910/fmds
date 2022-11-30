@@ -42,11 +42,19 @@
 
 						  <li><a href="" data-toggle="modal" data-target="#login">login</a></li>
 						  @endauth
-				          <li class="menu-has-children"><a href="">Pages</a>
-				            <ul>
-				              <li><a href="generic.html">Generic</a></li>
-				              <li><a href="elements.html">Elements</a></li>
-				            </ul>
+						  <select>
+    <option>Category</option>
+    <option  href="#"> Another action</option>
+    <a >Something else here</a>
+  <select>
+				          <li class="menu-has-children"><a href="">Category</a>
+
+						  <div class="dropdown">
+  
+
+  
+</div>
+						  
 				          </li>
 				        </ul>
 				      </nav><!-- #nav-menu-container -->		    		

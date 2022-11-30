@@ -7,7 +7,7 @@
 
 @endforeach
 @endif
-
+ 
     @csrf
   <div class="form-row">
     <div class="form-group col-md-6">

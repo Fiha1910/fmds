@@ -4,11 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Category;
 
 class WebController extends Controller
 {
     public function webhome(){
-        return view('Frontend.pages.home');
+        $data=Category::all();
+        return view('Frontend.pages.home',compact('data'));
     }
 
 
