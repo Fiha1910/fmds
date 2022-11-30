@@ -340,24 +340,74 @@
         <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">X</button>
       </div>
       <div class="modal-body">
-      <form>
+      <form action="{{route('user.login')}}" method="post">
+		@csrf
   <div class="form-group row">
     <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
     <div class="col-sm-10">
-      <input type="text"  class="form-control-plaintext"  value="email@example.com">
+      <input name="email" type="email"  class="form-control-plaintext"  value="email@example.com">
     </div>
   </div>
   <div class="form-group row">
     <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
     <div class="col-sm-10">
-      <input type="password" class="form-control"  placeholder="Password">
+      <input name="password" type="password" class="form-control"  placeholder="Password">
     </div>
   </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
 </form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  Launch demo modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="registration" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+	  <form action="{{route('registration')}}" method="post">
+                                    @csrf
+                                    <div class="form-group">
+                                        <label for="name">Enter Your Name:</label>
+                                        <input name="customer_name" type="text" class="form-control" id="name"  placeholder="Enter name">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Email address</label>
+                                        <input name="customer_email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="number">Phone Number</label>
+                                        <input name="customer_phone" type="text" class="form-control" id="number"  placeholder="Enter Number">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="exampleInputPassword1">Password</label>
+                                        <input name="customer_password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                                    </div>
+
+                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                </form>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">X</button>
+        
       </div>
     </div>
   </div>

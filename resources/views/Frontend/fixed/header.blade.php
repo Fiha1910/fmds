@@ -30,6 +30,8 @@
 				          <li><a href="#coffee">Pages</a></li>
 				          <li><a href="#review">Elements</a></li>
 				          <li><a href="#blog">Contact</a></li>
+						  <li><a href="" data-toggle="modal" data-target="#registration">Registration</a></li>
+
 						  <li><a href="" data-toggle="modal" data-target="#login">login</a></li>
 				          <li class="menu-has-children"><a href="">Pages</a>
 				            <ul>

@@ -29,8 +29,10 @@
 			<link rel="stylesheet" href="{{url('frontend/css/animate.min.css')}}">
 			<link rel="stylesheet" href="{{url('frontend/css/owl.carousel.css')}}">
 			<link rel="stylesheet" href="{{url('frontend/css/main.css')}}">
+			@notifyCss
 		</head>
 		<body>
+		@include('notify::components.notify')
             @include('frontend.fixed.header')
 
 			<!-- #header -->
@@ -59,6 +61,7 @@
 			<script src="{{url('frontend/js/jquery.counterup.min.js')}}"></script>					
 			<script src="{{url('frontend/js/mail-script.js')}}"></script>	
 			<script src="{{url('frontend/js/main.js')}}"></script>	
+			@notifyJs
 		</body>
 	</html>
 
