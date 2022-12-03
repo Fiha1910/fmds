@@ -11,6 +11,7 @@ class CategoryController extends Controller
         // $category = Category::all();
         $category = Category::paginate(2);
         
+        
         return view('Backend.Page.category.category',compact('category'));
     }
 

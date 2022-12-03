@@ -28,4 +28,9 @@ class DistributionController extends Controller
         return redirect()->back();
 
     }
+    public function deletedistribute($distribute_id)
+    {
+        $distribution=Distribution::find($distribute_id)->delete();
+        return redirect()->back()->with('message','Products deleted successfully');
+    }
 }

@@ -64,7 +64,10 @@ Route::get('/product/delete/{product_id}',[CategoryController::class,'deleteprod
 Route::get('category/edit/{category_id}',[CategoryController::class,'editcategory'])->name('category.edit');    
 Route::put('category/edit/{category_id}',[CategoryController::class,'update'])->name('category.update');
 
-Route::get('/products',[ProductsController::class,'list']);
+Route::get('/products',[ProductsController::class,'list'])->name('product.list');
+Route::get('products/create/list',[ProductsController::class,'create'])->name('product.create');
+
+
 
 Route::get('/stocks',[StockController::class,'list'])->name('stocks.list');
 Route::get('/stocks/create/form',[StockController::class,'form'])->name('stocks_table');
@@ -74,9 +77,12 @@ Route::get('/demands',[DemandController::class,'list'])->name('demand.list');
 Route::get('/demands/create',[DemandController::class,'create'])->name('demand.create');
 // Route::get('/demands/form',[DemandController::class,'form_details'])->name('demand.form');
 
+// Distribution:
 Route::get('/distributions',[DistributionController::class,'list'])->name('distributions.list');
 Route::get('/distributions/create/form',[DistributionController::class,'form_post'])->name('distributions.form');
 Route::post('/distributions/store',[DistributionController::class,'store'])->name('distribution.store');
+// for delete option
+Route::get('/products/distribute/{distribute_id}',[DistributionController::class,'deletedistribute'])->name('products.delete');
 
 Route::get('/reports',[ReportController::class,'list'])->name('reports.list');
 Route::get('/report/create/form',[ReportController::class,'list'])->name('report.list');

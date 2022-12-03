@@ -23,6 +23,11 @@
       <td>{{$data->date}}</td>
       <td>{{$data->address}}</td>
       <td>{{$data->contact}}</td>
+      <td>
+        <a href="" class="btn btn-outline-success">View</a>
+        <a href="{{route('products.delete',$data->id)}}" class="btn btn-outline-danger">Delete</a>
+        <a href="" class="btn btn-outline-primary">Edit</a>
+      </td>
     </tr>
     
     @endforeach
