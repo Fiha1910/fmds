@@ -64,9 +64,10 @@ Route::get('/product/delete/{product_id}',[CategoryController::class,'deleteprod
 Route::get('category/edit/{category_id}',[CategoryController::class,'editcategory'])->name('category.edit');    
 Route::put('category/edit/{category_id}',[CategoryController::class,'update'])->name('category.update');
 
+// Products
 Route::get('/products',[ProductsController::class,'list'])->name('product.list');
 Route::get('products/create/list',[ProductsController::class,'create'])->name('product.create');
-
+Route::post('/products/create/form',[ProductsController::class,'createform'])->name('create.form');
 
 
 Route::get('/stocks',[StockController::class,'list'])->name('stocks.list');

@@ -12,8 +12,11 @@
     <tr>
       <th scope="col">Id</th>
       <th scope="col">Name</th>
+      <th scope="col">Image</th>
+      <th scope="col">Category_Id</th>
+      <th scope="col">Price</th>
       <th scope="col">Status</th>
-      <th scope="col"></th>
+      <th scope="col">Product_Type</th>
     </tr>
   </thead>
   <tbody>
@@ -22,19 +25,7 @@
       <td></td>
       <td></td>
       <td></td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
+    </tr> 
   </tbody>
 </table>
 </div>
