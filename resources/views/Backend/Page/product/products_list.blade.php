@@ -20,12 +20,25 @@
     </tr>
   </thead>
   <tbody>
+    @foreach($product as $key => $data)
     <tr>
-      <th scope="row">1</th>
-      <td></td>
-      <td></td>
-      <td></td>
+      <th scope="row">{{$key + 1}}</th>
+      <td>{{$data->name}}</td>
+      <td>
+        
+        <img width="100px" styel="border-radius: 10px" src="{{url('/uploads/'.$data->image)}}" alt="image">
+      </td>
+      <td>{{$data->category_id}}</td>
+      <td>{{$data->price}}</td>
+      <td>{{$data->status}}</td>
+      <td>{{$data->product_type}}</td>
+      <td>
+      <a href="" class="btn btn-outline-success">View</a>
+      <a href="" class="btn btn-outline-primary">Edit</a>
+      <a href="" class="btn btn-outline-danger">Delete</a>
+      </td>
     </tr> 
+    @endforeach
   </tbody>
 </table>
 </div>

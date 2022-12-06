@@ -8,7 +8,8 @@ class ProductsController extends Controller
 {
     public function list()
     {
-        return view('Backend.Page.product.products_list');
+        $product=Products::all();
+        return view('Backend.Page.product.products_list',compact('product'));
 
     }
 
