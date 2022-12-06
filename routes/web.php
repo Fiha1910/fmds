@@ -29,7 +29,7 @@ Route::post('/register',[WebController::class,'registration'])->name('registrati
 Route::post('/user/login',[WebController::class,'login'])->name('user.login');
 Route::get('/user/logout', [WebController::class, 'logout'])->name('user.logout');
 
-
+Route::get('/category/list',[CategoryController::class,'categorylist'])->name('category.list');
 
 // for admin
 

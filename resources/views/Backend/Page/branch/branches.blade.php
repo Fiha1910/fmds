@@ -9,7 +9,9 @@
   <thead>
     <tr>
       <th scope="col">ID</th>
-      <th scope="col">Branches Name</th>
+      <th scope="col">Name</th>
+      <th scope="col">Address</th>
+      <th scope="col">Location</th>
       <th scope="col">Contact</th>
       <th scope="col">Status</th>
       <th scope="col">Action</th>
@@ -22,6 +24,8 @@
     <tr>
       <th scope="row">{{$key + 1}}</th>
       <td>{{$data->name}}</td>
+      <td>{{$data->address}}</td>
+      <td>{{$data->location}}</td>
       <td>{{$data->contact}}</td>
       <td>{{$data->status}}</td>
       <td>

@@ -20,7 +20,9 @@ class BranchController extends Controller
         Branch::create([
             'name'=> $request->name,
             'contact'=>$request->contact,
-            'status'=>$request->status
+            'status'=>$request->status,
+            'address'=>$request->address,
+            'location'=>$request->location,
             
         ]);
 

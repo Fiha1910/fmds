@@ -17,7 +17,9 @@ return new class extends Migration
             $table->id();
                    $table->string('name');
                    $table->string('contact');
-                   $table->string('status')->default('active');
+                   $table->string('status')->nullable();
+                   $table->string('address');
+                   $table->string('location');
             $table->timestamps();
         });
     }

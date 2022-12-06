@@ -27,8 +27,8 @@
 				        <ul class="nav-menu">
 				          <li class="menu-active"><a href="#home">Home</a></li>
 				          <li><a href="#about">About</a></li>
-				          <li><a href="#coffee">Pages</a></li>
-				          <li><a href="#review">Elements</a></li>
+				          <li><a href="#coffee">Branch</a></li>
+				          <li><a href="#review">Demand</a></li>
 				          <li><a href="#blog">Contact</a></li>
 
 						  @auth
@@ -42,12 +42,8 @@
 
 						  <li><a href="" data-toggle="modal" data-target="#login">login</a></li>
 						  @endauth
-						  <select>
-    <option>Category</option>
-    <option  href="#"> Another action</option>
-    <a >Something else here</a>
-  <select>
-				          <li class="menu-has-children"><a href="">Category</a>
+						 
+				          <li class="menu-has-children"><a href="{{route('category.list')}}">Category</a>
 
 						  <div class="dropdown">
   

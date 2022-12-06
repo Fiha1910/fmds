@@ -16,6 +16,10 @@ return new class extends Migration
         Schema::create('demands', function (Blueprint $table) {
             $table->id();
             $table->string('product_id');
+            $table->string('branch_id');
+            $table->string('quantity');
+            $table->string('date');
+
             $table->timestamps();
         });
     }

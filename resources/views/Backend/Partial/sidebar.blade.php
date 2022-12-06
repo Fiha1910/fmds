@@ -38,6 +38,8 @@
                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                 Distribution
             </a>
+
+            
             
             <a class="nav-link" href="{{route('reports.list')}}">
                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>

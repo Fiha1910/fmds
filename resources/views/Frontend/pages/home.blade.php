@@ -399,7 +399,17 @@
                                     <div class="form-group">
                                         <label for="exampleInputPassword1">Password</label>
                                         <input name="customer_password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+
                                     </div>
+									<p>Status</p>
+									<div class="form-control">
+										
+									<Select> name="status"
+									<option value="">Active</option>
+									<option value="">Inactive</option>
+									</Select>
+ 						 </div>
+  
 
                                     <button type="submit" class="btn btn-primary">Submit</button>
                                 </form>

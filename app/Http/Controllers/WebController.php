@@ -20,7 +20,10 @@ class WebController extends Controller
         User::create([
             'name'=>$request->customer_name,
             'email'=>$request->customer_email,
-            'mobile'=>$request->customer_phone,
+            'contact'=>$request->customer_phone,
+            'role'=>$request->user,
+            'image'=>$request->image,
+            'status'=>$request->status,
             'password'=> bcrypt($request->customer_password),
              'role'=>'user'
          ]);
@@ -51,5 +54,9 @@ class WebController extends Controller
         notify()->success('logout success');
         return redirect()->back();
     }
+    
+        
+    
+    
 
 }

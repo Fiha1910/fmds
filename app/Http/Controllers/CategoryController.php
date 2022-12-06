@@ -24,15 +24,15 @@ class CategoryController extends Controller
             // dd($request->all());
             $fileName=null;
             
-            if($request->hasFile('product_image'))
+            if($request->hasFile('image'))
             {
-                $fileName =date('ymdhmi').'.'.$request->file('product_image')->getClientOriginalExtension();
-                $request->file('product_image')->storeAs('/uploads',$fileName);
+                $fileName =date('ymdhmi').'.'.$request->file('image')->getClientOriginalExtension();
+                $request->file('image')->storeAs('/uploads',$fileName);
             }
             Category::create([
                 'name'=>$request->name,
                 'product_type'=>$request->product_type,
-                'product_image'=>$fileName
+                'image'=>$fileName
 
             ]);
             return redirect()->back();
@@ -50,23 +50,30 @@ class CategoryController extends Controller
         {
         $category=Category::find($category_id);
         $fileName=$category->product_image;
-        if($request->hasFile('product_image'))
+        if($request->hasFile('image'))
         {
-            $fileName =date('ymdhmi').'.'.$request->file('product_image')->getClientOriginalExtension();
-            $request->file('product_image')->storeAs('/uploads',$fileName);
+            $fileName =date('ymdhmi').'.'.$request->file('image')->getClientOriginalExtension();
+            $request->file('image')->storeAs('/uploads',$fileName);
         }
         
     
         $category->update([
             'name'=>$request->name,
             'product_type'=>$request->product_type,
-            'product_image'=>$fileName
+            'image'=>$fileName
 
         ]);
         return redirect()->back();
 
     }
+    public function categorylist(){
+        // $category = Category::all();
+        $category = Category::paginate(2);
         
+        
+        return view('Backend.Page.category.category',compact('category'));
+    }
+
     
 
     }
