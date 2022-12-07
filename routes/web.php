@@ -69,14 +69,10 @@ Route::get('/products',[ProductsController::class,'list'])->name('product.list')
 Route::get('products/create/list',[ProductsController::class,'create'])->name('product.create');
 Route::post('/products/create/form',[ProductsController::class,'createform'])->name('create.form');
 
-
-Route::get('/stocks',[StockController::class,'list'])->name('stocks.list');
-Route::get('/stocks/create/form',[StockController::class,'form'])->name('stocks_table');
-Route::post('/stocks/create/form/submit',[StockController::class,'form_post'])->name('stocks.form');
-
+// Demand
 Route::get('/demands',[DemandController::class,'list'])->name('demand.list');
 Route::get('/demands/create',[DemandController::class,'create'])->name('demand.create');
-// Route::get('/demands/form',[DemandController::class,'form_details'])->name('demand.form');
+Route::post('/demands/form',[DemandController::class,'form_details'])->name('demand.submit');
 
 // Distribution:
 Route::get('/distributions',[DistributionController::class,'list'])->name('distributions.list');

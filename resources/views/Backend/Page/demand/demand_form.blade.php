@@ -2,38 +2,38 @@
 
 @section('content')
 
-<form>
+<form action="{{route('demand.submit')}}" method="POST">
+@foreach($errors->all() as $meassage)
+    <p class="alert alert-danger">{$meassage}</p>
+
+@endforeach
+
+  @csrf
   <div class="form-row">
     <div class="form-group col-md-6">
-      <label for="inputEmail4">Product Id</label>
-      <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+      <label for="product_id">Product Id:</label>
+      <input name="product_id" type="number" class="form-control" id="product_id" placeholder="Enter Product Id">
     </div>
+
     <div class="form-group col-md-6">
-      <label for="inputPassword4">Date</label>
-      <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+      <label for="branch_id">Branch Id:</label>
+      <input name="branch_id"type="number" class="form-control" id="branch_id" placeholder="Enter Branch Id">
     </div>
   </div>
   <div class="form-group">
-    <label for="inputAddress">Quantity</label>
-    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+    <label for="quantity">Quantity:</label>
+    <input name="quantity" type="number" class="form-control" id="quantity" placeholder="Enter Quantity">
   </div>
   <div class="form-group">
-    <label for="inputAddress2">Price</label>
-    <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+    <label for="product_type">Product Type:</label>
+    <input name="product_type" type="text" class="form-control" id="product_type" placeholder="Enter Product Type">
   </div>
   <div class="form-row">
     <div class="form-group col-md-6">
-      <label for="inputCity">Distribution Status</label>
-      <input type="text" class="form-control" id="inputCity">
+      <label for="date">Date:</label>
+      <input name="date" type="date" class="form-control" id="date" placeholder="Enter Date">
     </div>
-    <div class="form-group col-md-4">
-      <label for="inputState">Branches Id</label>
-      <select id="inputState" class="form-control">
-        <option selected>Choose...</option>
-        <option>...</option>
-      </select>
-    </div>
-   <button type="submit" class="btn btn-primary">Sign in</button>
+ <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 
 @endsection()

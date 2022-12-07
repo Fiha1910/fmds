@@ -35,7 +35,8 @@ class ProductsController extends Controller
             'category_id'=>$request->category_id,
             'price'=>$request->price,
             'status'=>$request->status,
-            'product_type'=>$request->product_type
+            'product_type'=>$request->product_type,
+            'quantity'=>$request->quantity
             
 
         ]);

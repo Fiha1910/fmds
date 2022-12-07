@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('distributions', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
             $table->string('quantity');
             $table->string('date');
             $table->text('demand_id');

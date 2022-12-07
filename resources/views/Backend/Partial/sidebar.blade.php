@@ -22,11 +22,6 @@
                 Product
             </a>
             
-
-            <a class="nav-link" href="{{route('stocks.list')}}">
-                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                Stock
-            </a>
             
             <a class="nav-link" href="{{route('demand.list')}}">
                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>

@@ -21,16 +21,16 @@
 </div>
 
   <div class="form-group">
-    <label for="category_id">Category_Id</label>
+    <label for="category_id">Category_Id:</label>
     <input name="category_id" type="text" class="form-control" id="category_id" placeholder="Category Id">
   </div>
   <div class="form-group">
-    <label for="price">Price</label>
+    <label for="price">Price:</label>
     <input name="price" type="double" class="form-control" id="price" placeholder="Enter Price">
   </div>
 
   <div class="from-group">
-      <label for="">Select Status</label>
+      <label for="">Select Status:</label>
     <select name="status" id="" class="from-control">
       <option value="active">Active</option>
       <option value="inactive">Inactive</option>
@@ -39,9 +39,17 @@
 
   <div class="form-row">
     <div class="form-group col-md-6">
-      <label for="product_type"></label>
+      <label for="product_type">Product Type</label>
       <input name="product_type" type="product_type" class="form-control" id="product_type" placeholder="Enter Product type">
     </div>
+
+    <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="quantity">Quanttty:</label>
+      <input name="quantity" type="number" class="form-control" id="quantity" placeholder="Enter Quantity">
+    </div>
+  
+
 
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>

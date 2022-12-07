@@ -17,6 +17,8 @@
       <th scope="col">Price</th>
       <th scope="col">Status</th>
       <th scope="col">Product_Type</th>
+      <th scope="col">Quantity</th>
+      <th scope="col">Action</th>
     </tr>
   </thead>
   <tbody>
@@ -29,9 +31,10 @@
         <img width="100px" styel="border-radius: 10px" src="{{url('/uploads/'.$data->image)}}" alt="image">
       </td>
       <td>{{$data->category_id}}</td>
-      <td>{{$data->price}}</td>
+      <td>{{$data->price}} BDT</td>
       <td>{{$data->status}}</td>
       <td>{{$data->product_type}}</td>
+      <td>{{$data->quantity ? $data->quantity : "Not Available"}}</td>
       <td>
       <a href="" class="btn btn-outline-success">View</a>
       <a href="" class="btn btn-outline-primary">Edit</a>

@@ -11,33 +11,26 @@
   <thead>
     <tr>
       <th scope="col">Id</th>
-      <th scope="col">Date</th>
-      <th scope="col">Quantity</th>
-      <th scope="col">Price</th>
-      <th scope="col">Status</th>
+      <th scope="col">Product Id</th>
       <th scope="col">Branch Id</th>
+      <th scope="col">Quantity</th>
+      <th scope="col">Product Type</th>
+      <th scope="col">Date</th>
+      
     </tr>
   </thead>
   <tbody>
+  @foreach($demand as $key => $data)
     <tr>
-      <th scope="row">1</th>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td></td>
-      <td></td>
-      <td></td>
+      <th scope="row">{{$key + 1}}</th>
+      <td>{{$data->product_id}}</td>
+      <td>{{$data->branch_id}}</td>
+      <td>{{$data->quantity}}</td>
+      <td>{{$data->product_type}}</td>
+      <td>{{$data->date}}</td>
     </tr>
   </tbody>
+  @endforeach
 </table>
 </div>
 

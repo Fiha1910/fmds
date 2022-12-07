@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('product_id');
             $table->string('branch_id');
             $table->string('quantity');
+            $table->string('product_type');
             $table->string('date');
 
             $table->timestamps();
