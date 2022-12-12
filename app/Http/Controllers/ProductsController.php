@@ -46,5 +46,14 @@ class ProductsController extends Controller
         
         return view('Backend.Page.product.productform');
     }
-    
+    public function deleteform($product_id)
+    {
+        $product=Products::find($product_id)->delete();
+        return redirect ()->back()->with('message','Products deleted successfully');
+    }
+    public function editform($product_id)
+    {
+        $product=Products::find($product_id);
+        return view('backend.page.prodcut.edit',compact('product'));
+    }
 }

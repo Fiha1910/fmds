@@ -29,6 +29,12 @@
       <td>{{$data->quantity}}</td>
       <td>{{$data->product_type}}</td>
       <td>{{$data->date}}</td>
+      <td>
+        <a href="" class="btn btn-outline-primary">Edit</a>
+        <a href="{{route('demand.delete',$data->id)}}" class="btn btn-outline-danger">Delete</a>
+        <a href="" class="btn btn-outline-success">View</a>
+
+      </td>
     </tr>
   </tbody>
   @endforeach

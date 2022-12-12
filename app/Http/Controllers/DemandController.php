@@ -28,5 +28,10 @@ class DemandController extends Controller
 
         return view('Backend.Page.demand.demand_form');
     }
+    public function demanddelete($demand_id)
+    {
+        $demand=Demand::find($demand_id)->delete();
+        return redirect ()->back()->with('message','Demands deleted successfully');
+    }
     
 }

@@ -37,8 +37,8 @@
       <td>{{$data->quantity ? $data->quantity : "Not Available"}}</td>
       <td>
       <a href="" class="btn btn-outline-success">View</a>
-      <a href="" class="btn btn-outline-primary">Edit</a>
-      <a href="" class="btn btn-outline-danger">Delete</a>
+      <a href="edit.form" class="btn btn-outline-primary">Edit</a>
+      <a href="{{route('delete.form',$data->id)}}" class="btn btn-outline-danger">Delete</a>
       </td>
     </tr> 
     @endforeach
