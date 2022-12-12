@@ -9,8 +9,8 @@ use App\Models\Category;
 class WebController extends Controller
 {
     public function webhome(){
-        $data=Category::all();
-        return view('Frontend.pages.home',compact('data'));
+        $categories=Category::all();
+        return view('Frontend.pages.home',compact('categories'));
     }
 
 

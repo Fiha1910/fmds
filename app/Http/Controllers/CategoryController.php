@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Category;
+use App\Models\Products;
 
 use Illuminate\Http\Request;
 
@@ -72,6 +73,10 @@ class CategoryController extends Controller
         
         
         return view('Backend.Page.category.category',compact('category'));
+    }
+    public function categorywiseproduct($id){
+        $product = Products::where('category_id',$id)->get();
+        return view('Frontend.pages.categorywiseproduct',compact('product'));
     }
 
     

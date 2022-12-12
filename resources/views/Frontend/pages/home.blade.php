@@ -4,22 +4,7 @@
 @section('content')
 
 
-			<!-- start banner Area -->
-			<section class="banner-area" id="home">	
-				<div class="container">
-					<div class="row fullscreen d-flex align-items-center justify-content-start">
-						<div class="banner-content col-lg-7">
-							<h6 class="text-white text-uppercase">Now you can feel the Energy</h6>
-							<h1>
-								Fresh,Save <br>
-								Quality			
-							</h1>
-							<a href="#" class="primary-btn text-uppercase">Buy Now</a>
-						</div>											
-					</div>
-				</div>
-			</section>
-			<!-- End banner Area -->	
+				
 			
 			<!-- Start video-sec Area -->
 			<section class="video-sec-area pb-100 pt-40" id="about">
@@ -56,123 +41,21 @@
 						</div>
 					</div>						
 					<div class="row">
-						<div class="col-lg-4">
+						@foreach($categories as $data)
+						<div class="col-lg-4" onclick="location.href='{{route('categorywiseproduct',$data->id)}}'">
 							<div class="single-menu">
 								<div class="title-div justify-content-between d-flex">
-									<h4>Cappuccino</h4>
+									<h4>{{$data->name}}</h4>
 									<p class="price float-right">
-										$49
+										49 BDT
 									</p>
 								</div>
 								<p>
-									Usage of the Internet is becoming more common due to rapid advance.
+									{{$data->product_type}}
 								</p>								
 							</div>
 						</div>
-						<div class="col-lg-4">
-							<div class="single-menu">
-								<div class="title-div justify-content-between d-flex">
-									<h4>Americano</h4>
-									<p class="price float-right">
-										$49
-									</p>
-								</div>
-								<p>
-									Usage of the Internet is becoming more common due to rapid advance.
-								</p>								
-							</div>
-						</div>
-						<div class="col-lg-4">
-							<div class="single-menu">
-								<div class="title-div justify-content-between d-flex">
-									<h4>Espresso</h4>
-									<p class="price float-right">
-										$49
-									</p>
-								</div>
-								<p>
-									Usage of the Internet is becoming more common due to rapid advance.
-								</p>								
-							</div>
-						</div>	
-						<div class="col-lg-4">
-							<div class="single-menu">
-								<div class="title-div justify-content-between d-flex">
-									<h4>Macchiato</h4>
-									<p class="price float-right">
-										$49
-									</p>
-								</div>
-								<p>
-									Usage of the Internet is becoming more common due to rapid advance.
-								</p>								
-							</div>
-						</div>
-						<div class="col-lg-4">
-							<div class="single-menu">
-								<div class="title-div justify-content-between d-flex">
-									<h4>Mocha</h4>
-									<p class="price float-right">
-										$49
-									</p>
-								</div>
-								<p>
-									Usage of the Internet is becoming more common due to rapid advance.
-								</p>								
-							</div>
-						</div>
-						<div class="col-lg-4">
-							<div class="single-menu">
-								<div class="title-div justify-content-between d-flex">
-									<h4>Coffee Latte</h4>
-									<p class="price float-right">
-										$49
-									</p>
-								</div>
-								<p>
-									Usage of the Internet is becoming more common due to rapid advance.
-								</p>								
-							</div>
-						</div>
-						<div class="col-lg-4">
-							<div class="single-menu">
-								<div class="title-div justify-content-between d-flex">
-									<h4>Piccolo Latte</h4>
-									<p class="price float-right">
-										$49
-									</p>
-								</div>
-								<p>
-									Usage of the Internet is becoming more common due to rapid advance.
-								</p>								
-							</div>
-						</div>
-						<div class="col-lg-4">
-							<div class="single-menu">
-								<div class="title-div justify-content-between d-flex">
-									<h4>Ristretto</h4>
-									<p class="price float-right">
-										$49
-									</p>
-								</div>
-								<p>
-									Usage of the Internet is becoming more common due to rapid advance.
-								</p>								
-							</div>
-						</div>
-						<div class="col-lg-4">
-							<div class="single-menu">
-								<div class="title-div justify-content-between d-flex">
-									<h4>Affogato</h4>
-									<p class="price float-right">
-										$49
-									</p>
-								</div>
-								<p>
-									Usage of the Internet is becoming more common due to rapid advance.
-								</p>								
-							</div>
-						</div>															
+							@endforeach														
 					</div>
 				</div>	
 			</section>
