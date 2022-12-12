@@ -5,7 +5,7 @@
     <h1>Demand List</h1>
     
 
-    <a href="{{route('demand.create')}}" class="bform.detailstn btn-primary">Create New Demand</a>
+    <a href="{{route('demand.create')}}" class="bform.detailstn btn-primary">Create</a>
 
 <table class="table">
   <thead>
@@ -16,6 +16,7 @@
       <th scope="col">Quantity</th>
       <th scope="col">Product Type</th>
       <th scope="col">Date</th>
+      
       
     </tr>
   </thead>

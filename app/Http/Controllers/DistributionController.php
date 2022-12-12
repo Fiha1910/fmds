@@ -20,10 +20,12 @@ class DistributionController extends Controller
     public function store(Request $request)
     {
         Distribution::create([
-            "name"=>$request->name,
-            "date"=>$request->distribution_date,
-            "address"=>$request->address,
-            "contact"=>$request->contact
+            "demand_id"=>$request->demand_id,
+            "product_type"=>$request->product_type,
+            "quantity"=>$request->quantity,
+            "contact"=>$request->contact,
+            "date"=>$request->date
+
         ]);
         return redirect()->back();
 

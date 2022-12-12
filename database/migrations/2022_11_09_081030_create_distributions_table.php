@@ -15,11 +15,11 @@ return new class extends Migration
     {
         Schema::create('distributions', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('demand_id');
+            $table->string('product_type');
             $table->string('quantity');
-            $table->string('date');
-            $table->text('demand_id');
             $table->string('contact');
+            $table->string('date');
             $table->timestamps();
         });
     }
@@ -29,6 +29,8 @@ return new class extends Migration
      *
      * @return void
      */
+
+     
     public function down()
     {
         Schema::dropIfExists('distributions');
