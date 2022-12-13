@@ -54,6 +54,30 @@ class ProductsController extends Controller
     public function editform($product_id)
     {
         $product=Products::find($product_id);
-        return view('backend.page.prodcut.edit',compact('product'));
+        return view('Backend.Page.product.edit',compact('product'));
+    }
+    public function update(Request $request,$product_id)
+    {
+        $product=Products::find($product_id);
+        $fileName=$product->image;
+        if($request->hasFile('image'))
+        {
+            $fileName =date('ymdhmi').'.'.$request->file('image')->getClientOriginalExtension();
+            $request->file('image')->storeAs('/uploads',$fileName);
+        }
+        $product->update([
+            'name'=>$request->name,
+            'image'=>$fileName,
+            'category_id'=>$request->category_id,
+            'price'=>$request->price,
+            'status'=>$request->status,
+            'product_type'=>$request->product_type,
+            'quantity'=>$request->quantity
+            
+        ]);
+        return redirect()->route("product.list");
+        
     }
 }
+
+
