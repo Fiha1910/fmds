@@ -5,12 +5,14 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Category;
+use App\Models\Branch;
 
 class WebController extends Controller
 {
     public function webhome(){
         $categories=Category::all();
-        return view('Frontend.pages.home',compact('categories'));
+        $branchs = Branch::all();
+        return view('Frontend.pages.home',compact('categories',"branchs"));
     }
 
 

@@ -23,14 +23,55 @@ use App\Http\Controllers\WebController;
 |
 */
 
+
+
+
+
+
+
+// SSLCOMMERZ Start
+Route::get('/example1', [SslCommerzPaymentController::class, 'exampleEasyCheckout']);
+Route::get('/example2', [SslCommerzPaymentController::class, 'exampleHostedCheckout']);
+
+Route::post('/pay', [SslCommerzPaymentController::class, 'index']);
+Route::post('/pay-via-ajax', [SslCommerzPaymentController::class, 'payViaAjax']);
+
+Route::post('/success', [SslCommerzPaymentController::class, 'success']);
+Route::post('/fail', [SslCommerzPaymentController::class, 'fail']);
+Route::post('/cancel', [SslCommerzPaymentController::class, 'cancel']);
+
+Route::post('/ipn', [SslCommerzPaymentController::class, 'ipn']);
+//SSLCOMMERZ END
+
+
+
+
+
+
+
+
 // for website
 Route::get('/',[WebController::class,'webhome'])->name('home.page');
 Route::post('/register',[WebController::class,'registration'])->name('registration');
 Route::post('/user/login',[WebController::class,'login'])->name('user.login');
 Route::get('/user/logout', [WebController::class, 'logout'])->name('user.logout');
 
+// Category
 Route::get('/category/list',[CategoryController::class,'categorylist'])->name('category.list');
 Route::get('/category/wise/product/{id}',[CategoryController::class,'categorywiseproduct'])->name('categorywiseproduct');
+// Branch
+Route::get('/branch/list',[BranchController::class,'branchlist'])->name('branch.list');
+
+
+
+//Demand start
+
+Route::get('/demand', [DemandController::class, 'View'])->name('ViewDemand');
+Route::get('/demand/form/{id}', [DemandController::class, 'Form'])->name('OrderForm');
+Route::post('/demand/form-submit/{id}', [DemandController::class, 'FormSubmit'])->name('OrderForm.submit');
+
+// Demand end here
+
 
 // for admin
 

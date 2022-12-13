@@ -51,4 +51,10 @@ class BranchController extends Controller
         ]);
         return redirect()->back();
     }
+    public function branchlist($id){
+        $branch= Branch::all();
+        return view('Frontend.pages.branch.list',compact('branch'));
+    }
+
+
 }

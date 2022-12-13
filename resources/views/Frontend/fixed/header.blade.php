@@ -27,8 +27,8 @@
 				        <ul class="nav-menu">
 				          <li class="menu-active"><a href="#home">Home</a></li>
 				          <li><a href="#about">About</a></li>
-				          <li><a href="#coffee">Branch</a></li>
-				          <li><a href="#review">Demand</a></li>
+				          <li><a href="#branch">Branch</a></li>
+				          <li><a href="{{route('ViewDemand')}}">Demand</a></li>
 				          <li><a href="#blog">Contact</a></li>
 
 						  @auth
