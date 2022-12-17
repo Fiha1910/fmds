@@ -57,6 +57,7 @@ class DemandController extends Controller
             'product_id'=> $product->id,
             'branch_id'=> $request->branch_id,
             'quantity'=> $request->quantity,
+            'price'=>($request->quantity * $product->price),
             'product_type'=> $request->product_type,
             'date'=> $request->date
             
