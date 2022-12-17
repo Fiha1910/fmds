@@ -1,16 +1,17 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\WebController;
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\StockController;
 use App\Http\Controllers\BranchController;
+use App\Http\Controllers\DemandController;
+use App\Http\Controllers\ReportController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductsController;
-use App\Http\Controllers\StockController;
-use App\Http\Controllers\DemandController;
 use App\Http\Controllers\DistributionController;
-use App\Http\Controllers\ReportController;
-use App\Http\Controllers\AuthController;
-use App\Http\Controllers\WebController;
+use App\Http\Controllers\SslCommerzPaymentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,17 +31,11 @@ use App\Http\Controllers\WebController;
 
 
 // SSLCOMMERZ Start
-Route::get('/example1', [SslCommerzPaymentController::class, 'exampleEasyCheckout']);
-Route::get('/example2', [SslCommerzPaymentController::class, 'exampleHostedCheckout']);
 
-Route::post('/pay', [SslCommerzPaymentController::class, 'index']);
-Route::post('/pay-via-ajax', [SslCommerzPaymentController::class, 'payViaAjax']);
-
+Route::post('/pay/{id}', [SslCommerzPaymentController::class, 'index'])->name('pay.now');
 Route::post('/success', [SslCommerzPaymentController::class, 'success']);
 Route::post('/fail', [SslCommerzPaymentController::class, 'fail']);
 Route::post('/cancel', [SslCommerzPaymentController::class, 'cancel']);
-
-Route::post('/ipn', [SslCommerzPaymentController::class, 'ipn']);
 //SSLCOMMERZ END
 
 
@@ -104,7 +99,7 @@ Route::post('/category/create/form/submit',[CategoryController::class,'form'])->
 //for delete option
 Route::get('/product/delete/{product_id}',[CategoryController::class,'deleteproduct'])->name('admin.product.delete');
 // for edit,update
-Route::get('category/edit/{category_id}',[CategoryController::class,'editcategory'])->name('category.edit');    
+Route::get('category/edit/{category_id}',[CategoryController::class,'editcategory'])->name('category.edit');
 Route::put('category/edit/{category_id}',[CategoryController::class,'update'])->name('category.update');
 
 // Product:
