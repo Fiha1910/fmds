@@ -30,7 +30,7 @@ use App\Http\Controllers\SslCommerzPaymentController;
 
 
 
-// SSLCOMMERZ Start
+// SSLCOMMERZ Start(Payment Route):
 
 Route::post('/pay/{id}', [SslCommerzPaymentController::class, 'index'])->name('pay.now');
 Route::post('/success', [SslCommerzPaymentController::class, 'success']);
@@ -129,9 +129,8 @@ Route::post('/distributions/store',[DistributionController::class,'store'])->nam
 Route::get('/products/distribute/{distribute_id}',[DistributionController::class,'deletedistribute'])->name('products.delete');
 
 // Reports:
-Route::get('/reports',[ReportController::class,'list'])->name('reports.list');
-Route::get('/report/create/form',[ReportController::class,'list'])->name('report.list');
-Route::post('/report/form/store',[ReportController::class,'store'])->name('report.store');
+Route::get('/report',[DemandController::class,'report'])->name('demand.report');
+Route::get('/report/search',[DemandController::class,'reportSearch'])->name('demand.report.search');
 
 
 

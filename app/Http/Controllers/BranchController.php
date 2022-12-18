@@ -15,6 +15,11 @@ class BranchController extends Controller
         return view("backend.page.branch.branchesCreate");
     }
     public function details (Request $request){
+        $request->validate([
+            'name'=>'required',
+            'contact'=>'required',
+            'address'=>'required',
+        ]);
         //   dd ($request->all());
         
         Branch::create([

@@ -6,6 +6,7 @@ use App\Models\Branch;
 use App\Models\Demand;
 use App\Models\Products;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class DemandController extends Controller
 {
@@ -18,6 +19,12 @@ class DemandController extends Controller
     }
     public function form_details(Request $request)
     {
+        $request->validate([
+            'product_id'=>'required',
+            'branch_id'=>'required',
+            'product_type'=>'required'
+        ]);
+
         Demand::create([
             'product_id'=> $request->product_id,
             'branch_id'=> $request->branch_id,
@@ -53,6 +60,7 @@ class DemandController extends Controller
     }
     public function FormSubmit(Request $request,$id){
         $product = Products::find($id);
+
         Demand::create([
             'product_id'=> $product->id,
             'branch_id'=> $request->branch_id,
@@ -64,5 +72,42 @@ class DemandController extends Controller
         ]);
         return to_route('home.page');
     }
-    
+    public function report()
+    {
+        return view('backend.page.report.report');
+    }
+    public function reportSearch(Request $request)
+    {
+//        $request->validate([
+//            'from_date'    => 'required|date',
+//            'to_date'      => 'required|date|after:from_date',
+//        ]);
+
+        $validator = Validator::make($request->all(), [
+            'from_date'    => 'required|date',
+            'to_date'      => 'required|date|after:from_date',
+        ]);
+
+        if($validator->fails())
+        {
+//            notify()->error($validator->getMessageBag());
+            notify()->error('From date and to date required and to should greater then from date.');
+            return redirect()->back();
+        }
+
+
+
+       $from=$request->from_date;
+       $to=$request->to_date;
+
+
+//       $status=$request->status;
+
+        $demands=Demand::whereBetween('created_at', [$from, $to])->get();
+        return view('backend.page.report.report',compact('demands'));
+
+    }
 }
+
+    
+

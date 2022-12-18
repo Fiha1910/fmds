@@ -3,11 +3,14 @@
 @section('content')
 
 <form action="{{route('demand.submit')}}" method="POST">
+  @if($errors->any())
+
 @foreach($errors->all() as $meassage)
-    <p class="alert alert-danger">{$meassage}</p>
+    <p class="alert alert-danger">"{{$meassage}}"</p>
 
 @endforeach
 
+@endif
   @csrf
   <div class="form-row">
     <div class="form-group col-md-6">

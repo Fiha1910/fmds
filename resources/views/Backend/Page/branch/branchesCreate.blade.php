@@ -3,6 +3,14 @@
 
 <form action="{{route('branches.form')}}" method="POST">
   @csrf
+
+  @if($errors->any())
+    @foreach($errors->all() as $meassage)
+    <p class="alert alert-danger">"{{$meassage}}"</p>
+
+@endforeach
+@endif
+ 
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="">Name</label>
