@@ -3,7 +3,7 @@
 <form action="{{route('category.form')}}" method="POST" enctype="multipart/form-data">
   @if($errors->any())
     @foreach($errors->all() as $meassage)
-    <p class="alert alert-danger">{$meassage}</p>
+    <p class="alert alert-danger">"{{$meassage}}"</p>
 
 @endforeach
 @endif

@@ -23,6 +23,13 @@ class ProductsController extends Controller
     public function createform(Request $request)
 
     {
+        $request->validate([
+            'name'=>'required',
+            'image'=>'required',
+            'category_id'=>'required',
+            'product_type'=>'required',
+            'quantity'=>'required'
+        ]);
         $fileName=null;
         if($request->hasFile('image'))
         {

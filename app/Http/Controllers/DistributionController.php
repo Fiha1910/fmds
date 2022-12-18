@@ -19,6 +19,12 @@ class DistributionController extends Controller
     }
     public function store(Request $request)
     {
+        $request->validate([
+            'demand_id'=>'required',
+            'product_type'=>'required',
+            'quantity'=>'required'
+            
+        ]);
         Distribution::create([
             "demand_id"=>$request->demand_id,
             "product_type"=>$request->product_type,

@@ -3,7 +3,7 @@
 
 <form action="{{route('create.form')}}" method="post" enctype="multipart/form-data">
 @foreach($errors->all() as $meassage)
-    <p class="alert alert-danger">{$meassage}</p>
+    <p class="alert alert-danger">"{{$meassage}}"</p>
 
 @endforeach
 
