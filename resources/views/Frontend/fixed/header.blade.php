@@ -27,23 +27,23 @@
 				        <ul class="nav-menu">
 				          <li class="menu-active"><a href="#home"></a></li>
 				          <li><a href="#about"></a></li>
-				          <li><a href="#branch">Branch</a></li>
-				          <li><a href="{{route('ViewDemand')}}">Demand</a></li>
+				          <li><a href="#branch" >Branch</a></li>
+				          <li><a href="{{route('ViewDemand')}}" >Demand</a></li>
 				          <li><a href="#blog"></a></li>
 
 						  @auth
 						  <a class="nav-item nav-link">
 {{--                                   <img src="" alt="image">--}}
                                    {{auth()->user()->name}}</a>
-                                <a href="{{route('user.logout')}}" class="nav-item nav-link">Logout</a>
+                                <a href="{{route('user.logout')}}" class="nav-item nav-link" >Logout</a>
                             @else
 
-						  <li><a href="" data-toggle="modal" data-target="#registration">Registration</a></li>
+						  <li><a href="" data-toggle="modal" data-target="#registration" >Registration</a></li>
 
-						  <li><a href="" data-toggle="modal" data-target="#login">login</a></li>
+						  <li><a href="" data-toggle="modal" data-target="#login" >login</a></li>
 						  @endauth
 						 
-				          <li class="menu-has-children"><a href="{{route('category.list')}}">Category</a>
+				          <li class="menu-has-children"><a href="{{route('category.list')}}" >Category</a>
 
 						  <div class="dropdown">
   
