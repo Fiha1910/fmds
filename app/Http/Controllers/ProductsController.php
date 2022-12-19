@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Models\Category;
 use App\Models\Products;
+use Illuminate\Http\Request;
+
 class ProductsController extends Controller
 {
     public function list()
@@ -15,7 +17,8 @@ class ProductsController extends Controller
 
     public function create()
     {
-        return view('Backend.Page.product.productform');
+        $category = Category::all();
+        return view('Backend.Page.product.productform',compact('category'));
 
     }
     

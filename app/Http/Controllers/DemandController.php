@@ -15,7 +15,9 @@ class DemandController extends Controller
         return view('backend.page.demand.demands',compact('demand'));
     }
     public function create(){
-        return view('backend.page.demand.demand_form');
+        $branch = Branch::all();
+        $product = Products::all();
+        return view('backend.page.demand.demand_form',compact('branch','product'));
     }
     public function form_details(Request $request)
     {
@@ -55,7 +57,8 @@ class DemandController extends Controller
     public function Form($id)
     {
         $branch = Branch::all();
-        $product = Products::find($id);
+        $product = Products::all();
+        // dd($product);
         return View('frontend.pages.demand.orderForm',compact('branch','product'));
     }
     public function FormSubmit(Request $request,$id){
@@ -104,6 +107,7 @@ class DemandController extends Controller
 //       $status=$request->status;
 
         $demands=Demand::whereBetween('created_at', [$from, $to])->get();
+        // dd($demands);
         return view('backend.page.report.report',compact('demands'));
 
     }

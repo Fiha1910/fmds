@@ -25,7 +25,11 @@
 
   <div class="form-group">
     <label for="category_id">Category_Id:</label>
-    <input name="category_id" type="text" class="form-control" id="category_id" placeholder="Category Id"  value="{{$product->category_id}}">
+    <select name="category_id" id="">
+      @foreach($category as $data)
+      <option value="{{$data->id}}">{{$data->name}}</option>
+      @endforeach
+    </select>
   </div>
   <div class="form-group">
     <label for="price">Price:</label>

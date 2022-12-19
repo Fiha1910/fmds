@@ -15,12 +15,20 @@
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="product_id">Product Id:</label>
-      <input name="product_id" type="number" class="form-control" id="product_id" placeholder="Enter Product Id">
+      <select name="branch_id" id="">
+      @foreach($product as $data)
+      <option value="{{$data->id}}">{{$data->name}}</option>
+      @endforeach
+    </select>
     </div>
 
     <div class="form-group col-md-6">
       <label for="branch_id">Branch Id:</label>
-      <input name="branch_id"type="number" class="form-control" id="branch_id" placeholder="Enter Branch Id">
+      <select name="branch_id" id="">
+      @foreach($branch as $data)
+      <option value="{{$data->id}}">{{$data->name}}</option>
+      @endforeach
+    </select>
     </div>
   </div>
   <div class="form-group">
