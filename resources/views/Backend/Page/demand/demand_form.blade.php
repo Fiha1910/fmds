@@ -15,7 +15,7 @@
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="product_id">Product Id:</label>
-      <select name="branch_id" id="">
+      <select name="product_id" id="">
       @foreach($product as $data)
       <option value="{{$data->id}}">{{$data->name}}</option>
       @endforeach

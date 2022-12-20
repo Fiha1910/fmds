@@ -57,7 +57,7 @@ class DemandController extends Controller
     public function Form($id)
     {
         $branch = Branch::all();
-        $product = Products::all();
+        $product = Products::find($id);
         // dd($product);
         return View('frontend.pages.demand.orderForm',compact('branch','product'));
     }
