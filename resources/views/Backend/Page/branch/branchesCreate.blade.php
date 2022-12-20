@@ -34,7 +34,7 @@
   <div class="form-row">
   <div class="form-group col-md-6">
       <label for="">Contact</label>
-      <input type="number" class="form-control" id="contact_form" placeholder="Enter Your Contact" name="contact">
+      <input type="tel" class="form-control" id="contact_form" placeholder="Enter Your Contact" name="contact" placeholder="123-4567-7890" pattern="^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{4}[\s.-]?\d{4}$>
     </div>
   </div>
 
