@@ -178,7 +178,7 @@
                         <div class="form-group">
                             <label for="number">Phone Number</label>
                             <input required name="customer_phone" type="tel" class="form-control" id="number"
-                                placeholder="123-4567-7890" pattern="^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{4}[\s.-]?\d{4}$
+                                placeholder="Enter Contact Number" 'required|numeric|min:11'
 ">
                         </div>
 
