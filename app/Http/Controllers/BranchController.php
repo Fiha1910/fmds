@@ -17,7 +17,7 @@ class BranchController extends Controller
     public function details (Request $request){
         $request->validate([
             'name'=>'required',
-            'contact'=>'required',
+            'contact'=>'required|numeric|min:11',
             'address'=>'required',
         ]);
         //   dd ($request->all());

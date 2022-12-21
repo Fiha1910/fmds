@@ -26,7 +26,7 @@
 				      <nav id="nav-menu-container">
 				        <ul class="nav-menu">
 				          <li class="menu-active btn btn-primar"><a href="#home"></a></li>
-				          <li><a href="#about" class="btn btn-primary">About</a></li>
+				          <li><a href="#about"></a></li>
 				          <li><a href="#branch" class="btn btn-primary">Branch</a></li>
 				          <li><a href="{{route('ViewDemand')}}" class="btn btn-primary">Demand</a></li>
 

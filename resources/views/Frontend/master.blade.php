@@ -46,7 +46,7 @@
 								Fresh,Save <br>
 								Quality			
 							</h1>
-							<a href="#" class="primary-btn text-uppercase">Buy Now</a>
+							<a href="#" class="primary-btn text-uppercase"></a>
 						</div>											
 					</div>
 				</div>
