@@ -65,6 +65,7 @@ class DemandController extends Controller
         $product = Products::find($id);
 
         Demand::create([
+            "user_id"=> auth()->user()->id,
             'product_id'=> $product->id,
             'branch_id'=> $request->branch_id,
             'quantity'=> $request->quantity,

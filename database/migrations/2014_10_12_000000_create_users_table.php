@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string('role');
             $table->string('contact');
-            $table->string('status')->nullable();
+            $table->foreignId('branch_id')->constrained("branches")->nullable();
             $table->string('image')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');

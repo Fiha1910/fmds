@@ -18,9 +18,10 @@ class UserSeederTable extends Seeder
         User::create([
             "name" => "Admin",
             "email" => "admin@gmail.com",
-             "role" => "user",
+             "role" => "admin",
              "contact" => "01748209691",
-            "password" => bcrypt(123456)
+            "password" => bcrypt(123456),
+            "branch_id"=> "1"
         ]);
     }
 }

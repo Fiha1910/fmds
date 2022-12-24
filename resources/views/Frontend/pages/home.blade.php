@@ -159,20 +159,28 @@
                     <form action="{{ route('registration') }}" method="post">
                         @csrf
                         <div class="form-group">
-                            <label for="name">Enter Your Name:</label>
-                            <input required name="customer_name" type="text" class="form-control" id="name"
-                                placeholder="Enter name">
+                            <label for="email">Name</label>
+                            <input required name="name" type="name" class="form-control" id="name">
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Email address</label>
-                            <input required name="customer_email" type="email" class="form-control" id="exampleInputEmail1"
+                            <label for="name">Branch Name:</label>
+                            <select name="branch_id" class="form-control">
+
+                            @foreach($branchs as $branch)
+                                <option value="{{$branch->id}}">{{$branch->name}}</option>
+                            @endforeach
+                            </select>                                
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email address</label>
+                            <input required name="customer_email" type="email" class="form-control" id="email"
                                 aria-describedby="emailHelp" placeholder="Enter email">
                         </div>
 
                         <div class="form-group">
                             <label for="number">Phone Number</label>
                             <input required name="customer_phone" type="tel" class="form-control" id="number"
-                                placeholder="Enter Contact Number"
+                                placeholder="Enter Contact Number" min="11" max="13"/>
 ">
                         </div>
 
@@ -182,23 +190,8 @@
                                 id="exampleInputPassword1" placeholder="Password">
 
                         </div>
-                        <p>Status</p>
-                        <div  class="mb-3">
-
-                            <Select name="status" class="form-control">
-                                <option value="">Active</option>
-                                <option value="">Inactive</option>
-                            </Select>
-                        </div>
-
-
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
-
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">X</button>
-
                 </div>
             </div>
         </div>

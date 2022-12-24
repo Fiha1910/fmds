@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Category;
 use App\Models\Branch;
+use App\Models\Demand;
 
 class WebController extends Controller
 {
@@ -19,13 +20,19 @@ class WebController extends Controller
     public function registration(Request $request)
     {
         // dd($request->all());
+
+        $request->validate([
+            "name" => "required",
+            "email" => "required|email|unique:users,email",
+            "branch_id"=> "required|email|unique:users,branch_id",
+        ]);
         User::create([
-            'name'=>$request->customer_name,
+            'name'=>$request->name,
+            'branch_id'=>$request->branch_id,
             'email'=>$request->customer_email,
             'contact'=>$request->customer_phone,
-            'role'=>$request->user,
+            'role'=>"branch",
             'image'=>$request->image,
-            'status'=>$request->status,
             'password'=> bcrypt($request->customer_password),
              'role'=>'user'
          ]);
@@ -59,7 +66,9 @@ class WebController extends Controller
     
         
     public function profile(){
-        return view("Frontend.pages.profile");
+
+        $demands = Demand::where("user_id", auth()?->user()?->id)->get();
+        return view("Frontend.pages.profile",compact("demands"));
     }
     
 

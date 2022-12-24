@@ -30,21 +30,22 @@ class SslCommerzPaymentController extends Controller
         # Let's say, your oder transaction informations are saving in a table called "orders"
         # In "orders" table, order unique identity is "transaction_id". "status" field contain status of the transaction, "amount" is the order amount to be paid and "currency" is for storing Site Currency which will be checked with paid currency.
 
+       
         $post_data = array();
         $post_data['total_amount'] = $request->quantity * $product->price; # You cant not pay less than 10
         $post_data['currency'] = "BDT";
         $post_data['tran_id'] = uniqid(); // tran_id must be unique
 
         # CUSTOMER INFORMATION
-        $post_data['cus_name'] = 'Customer Name';
-        $post_data['cus_email'] = 'customer@mail.com';
+        $post_data['cus_name'] = auth()->user()->name;
+        $post_data['cus_email'] = auth()->user()->email;
         $post_data['cus_add1'] = 'Customer Address';
         $post_data['cus_add2'] = "";
         $post_data['cus_city'] = "";
         $post_data['cus_state'] = "";
         $post_data['cus_postcode'] = "";
         $post_data['cus_country'] = "Bangladesh";
-        $post_data['cus_phone'] = '8801XXXXXXXXX';
+        $post_data['cus_phone'] =  auth()->user()->contact;
         $post_data['cus_fax'] = "";
 
         # SHIPMENT INFORMATION
@@ -67,9 +68,10 @@ class SslCommerzPaymentController extends Controller
         $post_data['value_b'] = "ref002";
         $post_data['value_c'] = "ref003";
         $post_data['value_d'] = "ref004";
-
+        // dd($post_data);
         #Before  going to initiate the payment order status need to insert or update as Pending.
         Demand::create([
+            'user_id'=> auth()->user()->id,
             'product_id'=> $product->id,
             'branch_id'=> $request->branch_id,
             'quantity'=> $request->quantity,
@@ -81,8 +83,8 @@ class SslCommerzPaymentController extends Controller
         ]);
 
         $sslc = new SslCommerzNotification();
-        # initiate(Transaction Data , false: Redirect to SSLCOMMERZ gateway/ true: Show all the Payement gateway here )
         $payment_options = $sslc->makePayment($post_data, 'hosted');
+        # initiate(Transaction Data , false: Redirect to SSLCOMMERZ gateway/ true: Show all the Payement gateway here )
 
         if (!is_array($payment_options)) {
             print_r($payment_options);
