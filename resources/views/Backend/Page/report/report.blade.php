@@ -16,7 +16,7 @@
         <input name="to_date" type="date" class="form-control">
     </div>
     <div class="col-md-4">
-        <button type="submit" class="btn btn-success">Search</button>
+        <button type="submit" class="btn btn-success">Report</button>
     </div>
 </div>
 
@@ -27,7 +27,7 @@
     <table class="table table-striped">
         <thead>
         <tr>
-            <th scope="col">#</th>
+            <th scope="col">ID</th>
             <th scope="col">Product ID</th>
             <th scope="col">Quantity</th>
             <th scope="col">Product Type</th>

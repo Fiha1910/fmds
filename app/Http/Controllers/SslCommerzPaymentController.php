@@ -176,8 +176,9 @@ class SslCommerzPaymentController extends Controller
 
         #Check order status in order tabel against the transaction id or order id.
         
-        return redirect()->route('home.page');
-
+        // return redirect()->route('home.page');
+        notify()->success('success','payment done successfully');
+        return back();
 
     }
 
@@ -200,7 +201,9 @@ class SslCommerzPaymentController extends Controller
             echo "Transaction is Invalid";
         }
         return redirect()->route('home.page');
+        // notify()->success('Transaction is not successfull');
 
+        // return redirect()->route('home.page');
     }
 
     public function cancel(Request $request)
@@ -223,7 +226,9 @@ class SslCommerzPaymentController extends Controller
         }
         return redirect()->route('home.page');
 
+        // notify()->success('Transaction is cancelled');
 
+        // return redirect()->route('home.page');
     }
 
     public function ipn(Request $request)
