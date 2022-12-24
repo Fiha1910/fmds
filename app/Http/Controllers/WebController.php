@@ -19,12 +19,11 @@ class WebController extends Controller
 
     public function registration(Request $request)
     {
-        // dd($request->all());
 
         $request->validate([
             "name" => "required",
-            "email" => "required|email|unique:users,email",
-            "branch_id"=> "required|email|unique:users,branch_id",
+            "customer_email" => "required|email|unique:users,email",
+            "branch_id"=> "required|unique:users,branch_id",
         ]);
         User::create([
             'name'=>$request->name,

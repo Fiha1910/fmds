@@ -76,41 +76,33 @@ class DemandController extends Controller
         ]);
         return to_route('home.page');
     }
-    public function report()
-    {
-        return view('backend.page.report.report');
-    }
-    public function reportSearch(Request $request)
-    {
-//        $request->validate([
-//            'from_date'    => 'required|date',
-//            'to_date'      => 'required|date|after:from_date',
-//        ]);
-
+    public function report(Request $request)
+    { 
         $validator = Validator::make($request->all(), [
-            'from_date'    => 'required|date',
-            'to_date'      => 'required|date|after:from_date',
-        ]);
+        'from_date'    => 'required|date|before:now',
+        'to_date'      => 'required|date|after:from_date',
+    ]);
 
-        if($validator->fails())
-        {
+    if($validator->fails())
+    {
 //            notify()->error($validator->getMessageBag());
-            notify()->error('From date and to date required and to should greater then from date.');
-            return redirect()->back();
-        }
+        notify()->error('From date and to date required and to should greater then from date.');
+        $demands=Demand::get();
+        return view('backend.page.report.report',compact('demands'));
+    }
 
 
 
-       $from=$request->from_date;
-       $to=$request->to_date;
+   $from=$request->from_date;
+   $to=$request->to_date;
 
 
 //       $status=$request->status;
 
-        $demands=Demand::whereBetween('created_at', [$from, $to])->get();
-        // dd($demands);
-        return view('backend.page.report.report',compact('demands'));
-
+    $demands=Demand::whereBetween('date', [$from, $to])->get();
+    // dd($demands);
+    return view('backend.page.report.report',compact('demands'));
+    
     }
 }
 

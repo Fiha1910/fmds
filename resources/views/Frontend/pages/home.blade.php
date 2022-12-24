@@ -2,6 +2,17 @@
 
 
 @section('content')
+
+    @if($errors->any())
+
+        @php
+
+            foreach($errors->all() as $data){
+            
+            notify()->error($data);
+            }
+        @endphp
+    @endif
     <!-- Start menu Area -->
     <section class="menu-area section-gap" id="meat">
         <div class="container">

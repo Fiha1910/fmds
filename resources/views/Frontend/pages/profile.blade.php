@@ -65,7 +65,7 @@
                 <table class="table">
                     <thead>
                         <tr>
-                            <th scope="col">#</th>
+                            <th scope="col">ID</th>
                             <th scope="col">Product Name</th>
                             <th scope="col">Qty</th>
                             <th scope="col">Price</th>
@@ -76,7 +76,7 @@
                         <tr>
                             <th scope="row">{{$key+1}}</th>
                             <td>{{$data->product->name}}</td>
-                            <td>{{$data->quantity}}</td>
+                            <td>{{$data->quantity}} KG</td>
                             <td>{{$data->product->price}}</td>
                         </tr>
                         @endforeach

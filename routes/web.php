@@ -131,7 +131,7 @@ Route::get('/products/distribute/{distribute_id}',[DistributionController::class
 
 // Reports:
 Route::get('/report',[DemandController::class,'report'])->name('demand.report');
-Route::get('/report/search',[DemandController::class,'reportSearch'])->name('demand.report.search');
+Route::post('/report/search',[DemandController::class,'report'])->name('demand.report.search');
 
 
 

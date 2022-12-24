@@ -3,8 +3,8 @@
 
 <h1>Demand Report</h1>
 
-<form action="{{route('demand.report.search')}}" method="get">
-
+<form action="{{route('demand.report.search')}}" method="post">
+    @csrf
 <div class="row">
     <div class="col-md-4">
         <label for="">From date:</label>
@@ -45,7 +45,7 @@
             <td>{{$demand->quantity}}</td>
             <td>{{$demand->product_type}}</td>
             
-            <td>{{$demand->created_at}}</td>
+            <td>{{$demand->date}}</td>
 
         </tr>
         @endforeach
