@@ -31,7 +31,7 @@
 				          <li><a href="{{route('ViewDemand')}}" class="btn btn-primary">Demand</a></li>
 
 						  @auth
-						  <a class="nav-item nav-link">
+						  <a href="{{route('profile')}}" class=" mx-2 btn btn-primary">
 {{--                                   <img src="" alt="image">--}}
                                    {{auth()->user()->name}}</a>
                                 <a href="{{route('user.logout')}}" class="nav-item nav-link btn btn-danger" >Logout</a>

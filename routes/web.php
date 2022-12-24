@@ -65,6 +65,8 @@ Route::get('/demand', [DemandController::class, 'View'])->name('ViewDemand');
 Route::get('/demand/form/{id}', [DemandController::class, 'Form'])->name('OrderForm');
 Route::post('/demand/form-submit/{id}', [DemandController::class, 'FormSubmit'])->name('OrderForm.submit');
 
+Route::get("profile",[WebController::class,"profile"])->name("profile");
+
 // Demand end here
 
 
@@ -91,7 +93,6 @@ Route::get('/branches/delete/{branches_id}',[BranchController::class,'deletebran
 // for edit,update
 Route::get('/branch/edit/{branch_id}',[BranchController::class,'editbranch'])->name('branch.edit');
 Route::put('/branch/edit/{branch_id}',[BranchController::class,'update'])->name('branch.update');
-
 // Category:
 Route::get('/category',[CategoryController::class,'categories'])->name('categories.list');
 Route::get('/category/create/form',[CategoryController::class,'create'])->name('category.create');

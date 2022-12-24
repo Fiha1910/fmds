@@ -20,11 +20,11 @@
 
       
       
-    </tr>
-  </thead>
-  <tbody>
-  @foreach($demand as $key => $data)
-    <tr>
+     </tr>
+     </thead>
+     <tbody>
+     @foreach($demand as $key => $data)
+     <tr>
       <th scope="row">{{$key + 1}}</th>
       <td>{{$data->product->name}}</td>
       <td>{{$data->branch->name}}</td>

@@ -45,7 +45,6 @@
                     <th scope="col">Location</th>
                     <th scope="col">Contact</th>
                     <th scope="col">Status</th>
-                    <th scope="col">Action</th>
 
 
                 </tr>
@@ -59,11 +58,6 @@
                         <td>{{ $data->location }}</td>
                         <td>{{ $data->contact }}</td>
                         <td>{{ $data->status }}</td>
-                        <td>
-                            <a href="{{ route('branch.edit', $data->id) }}" class="btn btn-outline-primary">Edit</a>
-                            <a href="{{ route('admin.branch.delete', $data->id) }}"
-                                class="btn btn-outline-danger">Delete</a>
-                        </td>
                     </tr>
                 @endforeach
 

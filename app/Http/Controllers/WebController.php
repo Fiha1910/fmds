@@ -58,7 +58,9 @@ class WebController extends Controller
     }
     
         
-    
+    public function profile(){
+        return view("Frontend.pages.profile");
+    }
     
 
 }

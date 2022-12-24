@@ -30,6 +30,12 @@
 			<link rel="stylesheet" href="{{url('frontend/css/owl.carousel.css')}}">
 			<link rel="stylesheet" href="{{url('frontend/css/main.css')}}">
 			@notifyCss
+
+			<style>
+			.notify{
+				z-index:99999 !important;
+			}
+			</style>
 		</head>
 		<body>
 		@include('notify::components.notify')
@@ -37,6 +43,7 @@
 
 			<!-- #header -->
 <!-- start banner Area -->
+@if(!request()->is("profile"))
 <section class="banner-area" id="home">	
 				<div class="container">
 					<div class="row fullscreen d-flex align-items-center justify-content-start">
@@ -51,6 +58,7 @@
 					</div>
 				</div>
 			</section>
+@endif
 			<!-- End banner Area -->
             <section class="">
 				<div class="container">
@@ -60,8 +68,11 @@
 				</div>
 			</section>
 			
-			<!-- start footer Area -->		
+			<!-- start footer Area -->	
+			
+@if(!request()->is("profile"))	
             @include('frontend.fixed.footer')
+			@endif
 				
 			<!-- End footer Area -->	
 
