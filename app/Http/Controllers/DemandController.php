@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Validator;
 class DemandController extends Controller
 {
     public function list(){
-        $demand=Demand::all();
+        $demand=Demand::with('branch','product')->get();
         return view('backend.page.demand.demands',compact('demand'));
     }
     public function create(){

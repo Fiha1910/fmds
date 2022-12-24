@@ -28,10 +28,10 @@
         <thead>
         <tr>
             <th scope="col">#</th>
-            <th scope="col">User ID</th>
             <th scope="col">Product ID</th>
-            <th scope="col">Receiver ID</th>
-            <th scope="col">Receiver Branch Name</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Product Type</th>
+            
             <th scope="col">Demand Date</th>
 
         </tr>
@@ -41,10 +41,10 @@
         @foreach($demands as $key=>$demand)
         <tr>
             <td>{{$key+1}}</td>
-            <td>{{$demand->user_id}}</td>
             <td>{{$demand->product_id}}</td>
-            <td>{{$demand->receiver_id}}</td>
-            <td>{{$demand->receiver_branch_name}}</td>
+            <td>{{$demand->quantity}}</td>
+            <td>{{$demand->product_type}}</td>
+            
             <td>{{$demand->created_at}}</td>
 
         </tr>

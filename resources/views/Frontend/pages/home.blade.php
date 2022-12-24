@@ -121,7 +121,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Login Form</h1>
                     <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">X</button>
                 </div>
                 <div class="modal-body">
@@ -156,7 +156,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Registration Form</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -178,7 +178,7 @@
                         <div class="form-group">
                             <label for="number">Phone Number</label>
                             <input required name="customer_phone" type="tel" class="form-control" id="number"
-                                placeholder="Enter Contact Number" 'required|numeric|min:11'
+                                placeholder="Enter Contact Number"
 ">
                         </div>
 
