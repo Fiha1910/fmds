@@ -64,7 +64,8 @@ class ProductsController extends Controller
     public function editform($product_id)
     {
         $product=Products::find($product_id);
-        return view('Backend.Page.product.edit',compact('product'));
+        $category=Category::all();
+        return view('Backend.Page.product.edit',compact('category','product'));
     }
     public function update(Request $request,$product_id)
     {

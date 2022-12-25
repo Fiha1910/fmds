@@ -38,7 +38,7 @@
       <td>
         <a href="{{route('category.edit',$data->id)}}" class="btn btn-outline-primary">Edit</a>
         <a href="{{route('admin.product.delete',$data->id)}}" class="btn btn-outline-danger">Delete</a>
-        <a href="" class="btn btn-outline-success">View</a>
+       
 
       </td>
     </tr>

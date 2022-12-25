@@ -36,7 +36,7 @@
       <td>{{$data->product_type}}</td>
       <td>{{$data->quantity ? $data->quantity : "Not Available"}}</td>
       <td>
-      <a href="" class="btn btn-outline-success">View</a>
+      
       <a href="{{route('edit.form',$data->id)}}" class="btn btn-outline-primary">Edit</a>
       <a href="{{route('delete.form',$data->id)}}" class="btn btn-outline-danger">Delete</a>
       </td>
