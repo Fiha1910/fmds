@@ -3,15 +3,17 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
-use App\Models\Products;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class ProductsController extends Controller
 {
     public function list()
     {
-        $product=Products::all();
-        return view('Backend.Page.product.products_list',compact('product'));
+        $product=Product::all();
+        // dd($product);
+
+        return view('Backend.Page.product.product_list',compact('product'));
 
     }
 
@@ -39,7 +41,7 @@ class ProductsController extends Controller
             $fileName =date('ymdhmi').'.'.$request->file('image')->getClientOriginalExtension();
             $request->file('image')->storeAs('/uploads',$fileName);
         }
-        Products::create([
+        Product::create([
             'name'=>$request->name,
             'image'=>$fileName,
             'category_id'=>$request->category_id,
@@ -58,18 +60,18 @@ class ProductsController extends Controller
     }
     public function deleteform($product_id)
     {
-        $product=Products::find($product_id)->delete();
+        $product=Product::find($product_id)->delete();
         return redirect ()->back()->with('message','Products deleted successfully');
     }
     public function editform($product_id)
     {
-        $product=Products::find($product_id);
+        $product=Product::find($product_id);
         $category=Category::all();
         return view('Backend.Page.product.edit',compact('category','product'));
     }
     public function update(Request $request,$product_id)
     {
-        $product=Products::find($product_id);
+        $product=Product::find($product_id);
         $fileName=$product->image;
         if($request->hasFile('image'))
         {

@@ -18,8 +18,8 @@ class Demand extends Model
         return $this->hasOne(User::class);
     }
 
-    public function products(){
-        return $this->hasOne(Products::class,'id','product_id');
+    public function product(){
+        return $this->hasOne(Product::class,'id','product_id');
     }
     public function branch(){
         return $this->hasOne(Branch::class,'id','branch_id');

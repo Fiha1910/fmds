@@ -75,9 +75,9 @@
                         @foreach($demands as $key=>$data)
                         <tr>
                             <th scope="row">{{$key+1}}</th>
-                            <td>{{$data->products?->name}}</td>
+                            <td>{{$data->product->name}}</td>
                             <td>{{$data->quantity}} KG</td>
-                            <td>{{$data->products?->price}}</td>
+                            <td>{{$data->product->price}}</td>
                         </tr>
                         @endforeach
                     </tbody>

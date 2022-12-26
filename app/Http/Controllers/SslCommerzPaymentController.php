@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use DB;
 use App\Models\Demand;
-use App\Models\Products;
+use App\Models\Product;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Library\SslCommerz\SslCommerzNotification;
@@ -25,7 +25,7 @@ class SslCommerzPaymentController extends Controller
     public function index(Request $request,$id)
     {
         // dd($request->all());
-        $product = Products::find($id);
+        $product = Product::find($id);
         # Here you have to receive all the order data to initate the payment.
         # Let's say, your oder transaction informations are saving in a table called "orders"
         # In "orders" table, order unique identity is "transaction_id". "status" field contain status of the transaction, "amount" is the order amount to be paid and "currency" is for storing Site Currency which will be checked with paid currency.

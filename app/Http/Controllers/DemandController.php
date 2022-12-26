@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Branch;
 use App\Models\Demand;
-use App\Models\Products;
+use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -16,7 +16,7 @@ class DemandController extends Controller
     }
     public function create(){
         $branch = Branch::all();
-        $product = Products::all();
+        $product = Product::all();
         return view('backend.page.demand.demand_form',compact('branch','product'));
     }
     public function form_details(Request $request)
@@ -51,7 +51,7 @@ class DemandController extends Controller
 
     public function View()
     {
-        $productinfo=Products::all();
+        $productinfo=Product::all();
         return View('frontend.pages.demand.product', compact('productinfo'));
     }
 
@@ -59,12 +59,12 @@ class DemandController extends Controller
     public function Form($id)
     {
         $branch = Branch::all();
-        $product = Products::find($id);
+        $product = Product::find($id);
         // dd($product);
         return View('frontend.pages.demand.orderForm',compact('branch','product'));
     }
     public function FormSubmit(Request $request,$id){
-        $product = Products::find($id);
+        $product = Product::find($id);
 
         Demand::create([
             "user_id"=> auth()->user()->id,

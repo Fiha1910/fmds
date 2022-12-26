@@ -30,7 +30,7 @@
         
         <img width="100px" styel="border-radius: 10px" src="{{url('/uploads/',$data->image)}}" alt="image">
       </td>
-      <td>{{$data->category->name}}</td>
+      <td>{{$data->category?->name}}</td>
       <td>{{$data->price}} BDT</td>
       <td>{{$data->status}}</td>
       <td>{{$data->product_type}}</td>
