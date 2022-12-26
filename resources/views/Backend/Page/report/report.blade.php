@@ -2,7 +2,6 @@
 @section('content');
 
 <h1>Demand Report</h1>
-
 <form action="{{route('demand.report.search')}}" method="post">
     @csrf
 <div class="row">
@@ -31,7 +30,7 @@
             <th scope="col">Product ID</th>
             <th scope="col">Quantity</th>
             <th scope="col">Product Type</th>
-            
+            <th scope="col">Branch Name</th>
             <th scope="col">Demand Date</th>
 
         </tr>
@@ -44,7 +43,7 @@
             <td>{{$demand->product_id}}</td>
             <td>{{$demand->quantity}}</td>
             <td>{{$demand->product_type}}</td>
-            
+            <td>{{$demand->branch->name}}</td>
             <td>{{$demand->date}}</td>
 
         </tr>

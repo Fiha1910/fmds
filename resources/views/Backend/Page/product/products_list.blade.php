@@ -28,9 +28,9 @@
       <td>{{$data->name}}</td>
       <td>
         
-        <img width="100px" styel="border-radius: 10px" src="{{url('/uploads/'.$data->image)}}" alt="image">
+        <img width="100px" styel="border-radius: 10px" src="{{url('/uploads/',$data->image)}}" alt="image">
       </td>
-      <td>{{$data->category_id}}</td>
+      <td>{{$data->category->name}}</td>
       <td>{{$data->price}} BDT</td>
       <td>{{$data->status}}</td>
       <td>{{$data->product_type}}</td>
@@ -38,7 +38,6 @@
       <td>
       
       <a href="{{route('edit.form',$data->id)}}" class="btn btn-outline-primary">Edit</a>
-      <a href="{{route('delete.form',$data->id)}}" class="btn btn-outline-danger">Delete</a>
       </td>
     </tr> 
     @endforeach

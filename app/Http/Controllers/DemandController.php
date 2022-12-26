@@ -21,6 +21,7 @@ class DemandController extends Controller
     }
     public function form_details(Request $request)
     {
+       
         $request->validate([
             'product_id'=>'required',
             'branch_id'=>'required',
@@ -32,7 +33,8 @@ class DemandController extends Controller
             'branch_id'=> $request->branch_id,
             'quantity'=> $request->quantity,
             'product_type'=> $request->product_type,
-            'date'=> $request->date
+            'date'=> $request->date,
+            'user_id'=> auth()->user()->id
             
         ]);
         return redirect()->back();

@@ -13,7 +13,12 @@ class Demand extends Model
     use HasFactory;
     protected $guarded=[];
 
-    public function product(){
+    
+    public function user(){
+        return $this->hasOne(User::class);
+    }
+
+    public function products(){
         return $this->hasOne(Products::class,'id','product_id');
     }
     public function branch(){

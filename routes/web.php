@@ -52,13 +52,6 @@ Route::post('/register',[WebController::class,'registration'])->name('registrati
 Route::post('/user/login',[WebController::class,'login'])->name('user.login');
 Route::get('/user/logout', [WebController::class, 'logout'])->name('user.logout');
 
-// Category
-Route::get('/category/list',[CategoryController::class,'categorylist'])->name('category.list');
-Route::get('/category/wise/product/{id}',[CategoryController::class,'categorywiseproduct'])->name('categorywiseproduct');
-// Branch
-Route::get('/branch/list',[BranchController::class,'branchlist'])->name('branch.list');
-
-
 
 //Demand start
 
@@ -121,6 +114,15 @@ Route::get('/demands/create',[DemandController::class,'create'])->name('demand.c
 Route::post('/demands/form',[DemandController::class,'form_details'])->name('demand.submit');
 // for delete option
 Route::get('/demand/delete/{demand_id}',[DemandController::class,'demanddelete'])->name('demand.delete');
+
+
+
+// Category
+Route::get('/category/list',[CategoryController::class,'categorylist'])->name('category.list');
+Route::get('/category/wise/product/{id}',[CategoryController::class,'categorywiseproduct'])->name('categorywiseproduct');
+// Branch
+Route::get('/branch/list',[BranchController::class,'branchlist'])->name('branch.list');
+
 
 
 // Distribution:

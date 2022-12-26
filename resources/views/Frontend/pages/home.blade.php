@@ -13,39 +13,9 @@
             }
         @endphp
     @endif
-    <!-- Start menu Area -->
-    <section class="menu-area section-gap" id="meat">
-        <div class="container">
-            <div class="row d-flex justify-content-center">
-                <div class="menu-content pb-60 col-lg-10">
-                    <div class="title text-center">
-                        <h1 class="mb-10">Services for you</h1>
-                        <p>Who are in extremely love with eco friendly system.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                @foreach ($categories as $data)
-                    <div class="col-lg-4" onclick="location.href='{{ route('categorywiseproduct', $data->id) }}'">
-                        <div class="single-menu">
-                            <div class="title-div justify-content-between d-flex">
-                                <h4>{{ $data->name }}</h4>
-                                <p class="price float-right">
-                                    49 BDT
-                                </p>
-                            </div>
-                            <p>
-                                {{ $data->product_type }}
-                            </p>
-                        </div>
-                    </div>
-                @endforeach
-            </div>
-        </div>
-    </section>
 
     <section id="branch">
-        <h1>Branch List</h1>
+        <h1 class="text-center display-4 mt-4">Branch List</h1>
         <a href="{{ route('branch.list') }}" class="btn btn-primary mb-5">Create</a>
         <table class="table">
             <thead>
