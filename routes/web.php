@@ -46,7 +46,7 @@ Route::post('/cancel', [SslCommerzPaymentController::class, 'cancel']);
 
 
 
-// for website
+// for website:
 Route::get('/',[WebController::class,'webhome'])->name('home.page');
 Route::post('/register',[WebController::class,'registration'])->name('registration');
 Route::post('/user/login',[WebController::class,'login'])->name('user.login');
@@ -68,12 +68,12 @@ Route::get("profile",[WebController::class,"profile"])->name("profile");
 
 Route::get('/login',[AuthController::class,'login'])->name('login');
 Route::post("/login-do",[AuthController::class,'doLogin'])->name("do.login");
-
+// logout route:
 Route::get('/logout',[AuthController::class,'logout'])->name('do.logout');
-
+// Middleware use:
 Route::group(['middleware'=>'auth','prefix'=>'admin'],function(){
 
-
+// Home :
 Route::get('/',[HomeController::class, 'admin'])->name("admin");
 Route::get('/showhome',[HomeController::class,'showhome']);
 

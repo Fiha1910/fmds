@@ -12,7 +12,7 @@ class WebController extends Controller
 {
     public function webhome(){
         $categories=Category::all();
-        $branchs = Branch::all();
+        $branchs = Branch::where('status','active')->get();
         return view('Frontend.pages.home',compact('categories',"branchs"));
     }
 

@@ -15,8 +15,7 @@
     @endif
 
     <section id="branch">
-        <h1 class="text-center display-4 mt-4">Branch List</h1>
-        <a href="{{ route('branch.list') }}" class="btn btn-primary mb-5">Create</a>
+        <h1 class="text-center display-4 my-4">Branch List</h1>
         <table class="table">
             <thead>
                 <tr>
